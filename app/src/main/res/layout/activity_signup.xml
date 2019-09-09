@@ -1,0 +1,377 @@
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:background="@color/whitecolor"
+    >
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_color"
+            >
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_weight="1"
+                android:background="@color/app_color"
+                 >
+             <!--   <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="5"
+                    >
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:id="@+id/back"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        >
+                        <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/icon_size"
+                            android:layout_height="@dimen/icon_size"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_back"
+                            />
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_weight="3"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        >
+
+                        <com.NativeTech.rehla.Utills.MyTextViewBold
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/grid_txt_size"
+                            android:text="@string/trips"
+                            android:visibility="gone"
+                            android:textAllCaps="false"
+                            android:textColor="@color/whitecolor"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            />
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:id="@+id/message_lin"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        >
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                </LinearLayout>-->
+
+
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/dime_20"
+            android:layout_marginStart="@dimen/dime_15"
+            android:layout_marginEnd="@dimen/dime_15"
+            >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_marginBottom="@dimen/dime_20"
+
+                android:layout_height="wrap_content"
+
+                 >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="@dimen/dime_90"
+                    android:id="@+id/img"
+                    android:src="@drawable/transparet"
+                    app:civ_border_color="@color/colorAccent"
+                    app:civ_border_width="2dip"
+                    app:civ_fill_color="@color/colorAccent"
+                     app:civ_circle_background_color="@color/colorAccent"
+                    android:layout_gravity="center"
+                    android:layout_height="@dimen/dime_90" />
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/imgpicker"
+                    android:layout_width="@dimen/dime_26"
+                    android:layout_height="@dimen/dime_38"
+                    android:scaleType="centerInside"
+                      app:srcCompat="@drawable/ic_add_image"
+                    android:layout_gravity="center"
+                    />
+            </FrameLayout>
+
+
+        <com.NativeTech.rehla.Utills.MyEditText
+            android:id="@+id/name"
+            style="@style/etStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_user_name"
+            android:hint="@string/full_name"
+            android:inputType="text"
+             />
+        <com.NativeTech.rehla.Utills.MyEditText
+            android:id="@+id/email"
+            style="@style/etStyle"
+            android:layout_marginTop="@dimen/dime_15"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_email"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+             />
+        <com.NativeTech.rehla.Utills.MyEditText
+            android:id="@+id/password"
+            style="@style/etStyle"
+            android:layout_marginTop="@dimen/dime_15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_locked"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:textAlignment="viewStart"
+             />
+            <RadioGroup
+                android:id="@+id/nation"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:weightSum="1"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4_height"
+                android:layout_marginBottom="@dimen/_4_height"
+                android:layout_marginEnd="@dimen/_4_height" >
+
+                <RadioButton
+                    android:id="@+id/Saudi"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blakcolor"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:padding="@dimen/margint"
+
+
+                    android:textAlignment="textStart"
+                    android:text="@string/saudi"
+                    />
+                <RadioButton
+                    android:id="@+id/Foreigner"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blakcolor"
+                    android:padding="@dimen/margint"
+                    android:checked="true"
+                    android:textAlignment="textStart"
+                    android:text="@string/foreigner" />
+            </RadioGroup>
+            <com.NativeTech.rehla.Utills.MyEditText
+            android:id="@+id/identity_num"
+                style="@style/etStyle"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/dime_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_certificate"
+            android:hint="@string/identity_number"
+            android:inputType="number"
+             />
+            <LinearLayout
+                android:id="@+id/mobile_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/dime_15"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.NativeTech.rehla.Utills.MyTextView
+                    android:id="@+id/spinner_countries"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4"
+                    style="@style/etStyle"
+                     android:text="@string/country_code"
+                     android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/gray_selected"
+                    android:spinnerMode="dialog" />
+
+                <com.NativeTech.rehla.Utills.MyEditText
+                    android:id="@+id/phone"
+                    style="@style/etStyle"
+                    android:layout_marginStart="@dimen/dime_10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:hint="@string/mobile_number"
+                    android:inputType="phone"
+                    android:textCursorDrawable="@null"
+                    android:maxLines="1"
+                    android:drawableStart="@drawable/ic_phone_receiver"
+                     android:textColor="@color/blakcolor"
+                    />
+            </LinearLayout>
+            <com.NativeTech.rehla.Utills.MyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:drawablePadding="@dimen/_4_height"
+                android:layout_margin="@dimen/_4_height"
+                android:visibility="gone"
+                android:hint="@string/date_of_birth"
+                android:gravity="center"
+                android:textColor="@color/gray_selected"
+                android:textSize="@dimen/_12ssp"
+                />
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:visibility="gone"
+                android:weightSum="1"
+                >
+
+
+                    <Spinner
+                        android:id="@+id/year_spinner"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.3"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:overScrollMode="never"
+                        android:scrollbars="none" />
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_weight="0.04"
+                        android:layout_height="wrap_content" />
+                    <Spinner
+                        android:id="@+id/month_spinner"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.3"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:overScrollMode="never"
+                        android:scrollbars="none" />
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_weight="0.03"
+                        android:layout_height="wrap_content" />
+
+                    <Spinner
+                        android:id="@+id/day_spinner"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.3"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:overScrollMode="never"
+                        android:scrollbars="none" />
+
+
+            </android.support.v7.widget.LinearLayoutCompat>
+            <com.NativeTech.rehla.Utills.MyTextView
+                android:id="@+id/city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/blabla_et"
+                android:padding="@dimen/_10_height"
+                android:drawableStart="@drawable/ic_pin"
+                android:drawablePadding="@dimen/_4_height"
+                android:visibility="gone"
+                android:layout_margin="@dimen/_4_height"
+                android:text="@string/city"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_12ssp"
+                android:spinnerMode="dialog"
+                />
+            <RadioGroup
+                android:id="@+id/gender"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:weightSum="1"
+                android:layout_marginTop="@dimen/dime_15"
+                android:layout_height="wrap_content"
+               >
+
+                <RadioButton
+                    android:id="@+id/male"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blakcolor"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                     android:checked="true"
+                    android:textAlignment="textStart"
+                    android:text="@string/male"
+                    />
+                <RadioButton
+                    android:id="@+id/female"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blakcolor"
+                     android:textAlignment="textStart"
+                    android:text="@string/female" />
+            </RadioGroup>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dime_20"
+                android:orientation="horizontal"
+                >
+
+                <CheckBox
+                    android:id="@+id/checkBox_max2"
+                    android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:checked="true"
+                    android:text="@string/i_have_read_and_accept_terms_and_conditions"
+                    android:textColor="@color/gray_selected"
+
+
+                    />
+
+            </LinearLayout>
+            <com.NativeTech.rehla.Utills.ButtonBold
+                android:id="@+id/signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:minWidth="@dimen/dime_200"
+                android:layout_marginTop="@dimen/dime_20"
+                android:layout_marginBottom="@dimen/dime_38"
+                android:textColor="@color/whitecolor"
+                android:text="@string/sign_up"
+                android:background="@drawable/ride_status_green_2"
+                />
+
+        </android.support.v7.widget.LinearLayoutCompat>
+    </ScrollView>
+</android.support.v7.widget.LinearLayoutCompat>

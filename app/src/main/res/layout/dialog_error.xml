@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.NativeTech.rehla.Utills.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="@dimen/_4_height"
+                android:text="@string/language"
+                android:textColor="@color/kprogresshud_default_color"
+                android:textSize="@dimen/_10ssp"
+                android:visibility="gone" />
+
+            <com.NativeTech.rehla.Utills.MyTextViewBold
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                style="@style/tvStyleBold"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="@dimen/_4_height"
+                android:text="@string/note"
+                android:textColor="@color/blakcolor"
+                android:textSize="@dimen/_14ssp" />
+
+            <com.NativeTech.rehla.Utills.MyTextView
+                android:id="@+id/txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="@dimen/_4_height"
+                android:textColor="@color/blakcolor"
+                android:textSize="@dimen/_12ssp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_height"
+                android:background="@color/kprogresshud_grey_color" />
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_4_height"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.NativeTech.rehla.Utills.MyTextView
+                    android:id="@+id/cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/height_button"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                    android:text="@string/cancel"
+                    android:textColor="@color/labanycolor"
+                    android:textSize="@dimen/_14ssp"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="@dimen/view_height"
+                    android:layout_height="match_parent"
+                    android:background="@color/kprogresshud_grey_color"
+                    android:visibility="gone" />
+
+                <com.NativeTech.rehla.Utills.MyTextView
+                    android:id="@+id/ok"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                    android:text="@string/ok"
+                    android:textColor="@color/labanycolor"
+                    android:textSize="@dimen/_14ssp" />
+            </android.support.v7.widget.LinearLayoutCompat>
+        </android.support.v7.widget.LinearLayoutCompat>
+    </android.support.v7.widget.LinearLayoutCompat>
+
+</android.support.v7.widget.LinearLayoutCompat>

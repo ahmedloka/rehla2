@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/backgroundRos"
+    >
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/backgroundRos"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.NativeTech.rehla.Utills.MyTextView
+            android:id="@+id/DialogHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_10_height"
+            android:layout_marginTop="@dimen/_10_height"
+            android:text="@string/select_country"
+            android:textColor="@color/blakcolor"
+            android:textSize="@dimen/_14ssp"
+
+
+            />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/whitecolor"
+        android:paddingBottom="@dimen/_10_height"
+
+        >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_4_height"
+            android:background="@color/app_color" />
+
+
+        <com.NativeTech.rehla.Utills.MyTextView
+            android:id="@+id/All"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/all"
+            android:textSize="@dimen/_14ssp"
+            android:layout_margin="@dimen/_10_height"
+            />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/Recycler_Dialog_cities"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.153">
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

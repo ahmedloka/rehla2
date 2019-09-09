@@ -1,0 +1,25 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_height">360dp</dimen>
+    <dimen name="dime_8">12dp</dimen>
+    <dimen name="dime_3">5dp</dimen>
+     <dimen name="dime_38">57dp</dimen>
+     <dimen name="dime_10">15dp</dimen>
+    <dimen name="dime_20">30dp</dimen>
+    <dimen name="dime_90">135dp</dimen>
+    <dimen name="dime_5">8dp</dimen>
+    <dimen name="dime_80">120dp</dimen>
+    <dimen name="dime_118">177dp</dimen>
+    <dimen name="dime_26">39dp</dimen>
+    <dimen name="dime_70">105dp</dimen>
+    <dimen name="appbar_padding_top">12dp</dimen>
+    <dimen name="dime_175">262dp</dimen>
+    <dimen name="dime_45">68dp</dimen>
+    <dimen name="dime_15">23dp</dimen>
+    <dimen name="dime_100">150dp</dimen>
+    <dimen name="dime_200">300dp</dimen>
+
+    <dimen name="dime_87" >131dp</dimen>
+    <dimen name="dime_55" >83dp</dimen>
+</resources>

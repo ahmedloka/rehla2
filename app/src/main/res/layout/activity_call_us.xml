@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_color">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_weight="1"
+            app:titleTextColor="@android:color/white"
+            app:titleTextAppearance="@style/toolbarStyle"
+            app:title="@string/complaint_and_suggestion"
+            android:background="@color/app_color" >
+
+
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/whitecolor">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                >
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_265_dp_height"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/contact_us_header" />
+
+                <com.NativeTech.rehla.Utills.MyTextViewBold
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/margint"
+                    android:drawablePadding="@dimen/margin_txt"
+                    android:padding="@dimen/margin_txt"
+                    android:text="@string/email"
+                    style="@style/tvStyleBold"
+                    android:textColor="@color/gray_unselected"
+                    android:textSize="@dimen/grid_txt_size"
+                    android:visibility="gone" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/email"
+                    style="@style/blabla_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margint"
+                    android:layout_marginEnd="@dimen/margint"
+                    android:drawableStart="@drawable/ic_email"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="@color/gray_unselected"
+                    android:visibility="gone" />
+
+                <com.NativeTech.rehla.Utills.MyTextViewBold
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/margint"
+                    android:drawablePadding="@dimen/margin_txt"
+                    android:padding="@dimen/margin_txt"
+                    android:text="@string/full_name"
+                    style="@style/tvStyleBold"
+                    android:textColor="@color/gray_unselected"
+                    android:textSize="@dimen/grid_txt_size"
+                    android:visibility="gone" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/name"
+                    style="@style/blabla_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10_height"
+                    android:layout_marginEnd="@dimen/_10_height"
+                    android:drawableStart="@drawable/ic_user_name"
+                    android:hint="@string/full_name"
+                    android:inputType="text"
+                    android:textColorHint="@color/gray_unselected"
+                    android:visibility="gone" />
+
+                <com.NativeTech.rehla.Utills.MyTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_marginTop="@dimen/dime_10"
+                    android:layout_marginStart="@dimen/dime_15"
+                    android:layout_marginEnd="@dimen/dime_15"
+                    android:layout_marginBottom="@dimen/dime_10"
+                    android:padding="@dimen/dime_5"
+                    android:text="@string/message"
+                    android:textColor="@color/gray_selected"
+                    />
+
+                <com.NativeTech.rehla.Utills.MyEditText
+                    android:id="@+id/message"
+                    style="@style/blabla_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dime_15"
+                    android:layout_marginEnd="@dimen/dime_15"
+                    android:gravity="start"
+                    android:minHeight="@dimen/dime_175"
+                     android:hint="@string/enter_your_message"
+                    android:inputType="text"
+                    android:textColorHint="@color/gray_unselected" />
+
+                <com.NativeTech.rehla.Utills.ButtonBold
+                    android:id="@+id/submit"
+                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                     android:layout_marginTop="@dimen/_45_height"
+                    android:layout_marginStart="@dimen/dime_15"
+                    android:layout_marginEnd="@dimen/dime_15"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:background="@drawable/ride_status_green_2"
+                    android:gravity="center"
+                    android:text="@string/send"
+                    android:textAllCaps="false"
+                    android:textColor="@color/whitecolor"
+                     />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45_height" />
+            </android.support.v7.widget.LinearLayoutCompat>
+        </ScrollView>
+    </android.support.v7.widget.LinearLayoutCompat>
+</android.support.v7.widget.LinearLayoutCompat>

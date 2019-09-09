@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#25D497</color>
+    <color name="colorPrimaryDark">#25D497</color>
+    <color name="colorAccent">#25D497</color>
+    <color name="tab_border">#7B7B7B</color>
+    <color name="tab_background">#F1F2F1</color>
+    <color name="buttoncolor">#432bc0</color>
+    <color name="graycolor">#D7DDDf</color>
+    <color name="whitecolor">#ffffff</color>
+    <color name="redcolor">#FE2A2F</color>
+    <color name="labanycolor">#007AFF</color>
+    <color name="blakcolor">#4D4D4D</color>
+    <color name="grycolor">#F6F6F6</color>
+    <color name="theme_color_primary">#1c9359</color>
+    <color name="theme_color_primary_light">#3aaf75</color>
+    <color name="theme_color_accent">#084e43</color>
+    <color name="bluf">#054752</color>
+    <color name="appBarColor">#A16EC2</color>
+    <color name="textcolor">#81949c</color>
+    <color name="blue_purple">#5a1ab9</color>
+    <color name="grid_txt">#432bc0</color>
+    <color name="bright_cyan">#4ddefd</color>
+    <color name="edittext_color">#b7c4ca</color>
+    <color name="verficationtext_color">#515F65</color>
+    <color name="gridview_background_color">#f7fbfc</color>
+    <color name="sort_text_color">#47565c</color>
+    <color name="view_color">#dee7ec</color>
+    <color name="golden_color">#FED330</color>
+    <color name="green_color">#1FB938</color>
+    <color name="profile_background_color">#F7FBFC</color>
+    <color name="app_color">#25D497</color>
+    <color name="app_color_dark">#25D497</color>
+    <color name="profile_color">#25D497</color>
+    <color name="backgroundRos">#EAECEE</color>
+    <color name="offWhite">#FDFDFD</color>
+    <color name="wallet_color">#F5B223</color>
+    <color name="wallet_color_dark">#FAD678</color>
+
+
+    <color name="gray_unselected">#B7B7B7</color>
+    <color name="gray_selected">#7B7B7B</color>
+
+    <color name="whitesmoke">#f7f7f7</color>
+    <color name="drawables_color">#A6B0BD</color>
+    <color name="blakcolorover">#A6000000</color>
+
+</resources>

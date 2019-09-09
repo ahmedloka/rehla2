@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">رحلة</string>
+    <string name="my_rides">رحلاتي</string>
+    <string name="upcomming_rides">الرحلات القادمة</string>
+    <string name="history_rides">الرحلات السابقة</string>
+    <string name="sar">ريال</string>
+    <string name="date">التاريخ</string>
+    <string name="expected_time">الوقت المتوقع</string>
+    <string name="rated">تم تقييمها</string>
+    <string name="rate_rider">تقييم الكابتن</string>
+    <string name="cancel_reason">سبب الإلغاء</string>
+    <string name="message">مراسلة</string>
+    <string name="call">اتصال</string>
+    <string name="rehla">رحلة</string>
+    <string name="password">كلمة المرور</string>
+    <string name="email_or_mobile_number">البريد الالكتروني او رقم الهاتف</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="or">او</string>
+    <string name="login_with_facebook">تسجيل الدخول بالفيسبوك</string>
+    <string name="country_code">كود الدولة</string>
+    <string name="date_of_birth">تاريخ ميلادك :</string>
+    <string name="city">مدينة</string>
+    <string name="male">ذكر</string>
+    <string name="female">أنثي</string>
+    <string name="phone">رقم الهاتف</string>
+    <string name="sign_up">إنشاء الحساب</string>
+    <string name="i_have_read_and_accept_terms_and_conditions">لقد قرأت و أوافق علي هذه الشروط </string>
+    <string name="full_name">الإسم بالكامل</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="send">إرسال</string>
+    <string name="send_again">إرسال مرة اخرى</string>
+    <string name="don_t_get_verification_code">لم احصل علي كود تفعيل</string>
+
+    <string name="home">الرئيسية</string>
+    <string name="search">بحث</string>
+    <string name="bookmark">إنشاء رحلة</string>
+    <string name="more">اكثر</string>
+    <string name="mobile_number">رقم الهاتف</string>
+    <string name="find_ride">بحث عن رحلة</string>
+    <string name="offer_ride">إنشاء رحلة</string>
+    <string name="captin_trips">رحلات الكابتن</string>
+    <string name="messages">الرسائل</string>
+    <string name="excellent">اوصي بالتعامل معه</string>
+    <string name="passenger_trips">حجوزاتي</string>
+    <string name="waiting_trips_alert">رحلاتي المفضلة</string>
+    <string name="notification">الإشعارات</string>
+    <string name="wallet">المحفظة</string>
+    <string name="settings">الاعدادات</string>
+    <string name="profile">الصفحة الشخصية</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="edit_profile">تعديل البيانات</string>
+    <string name="rating">التقييم</string>
+    <string name="preference">التفضيلات</string>
+    <string name="licence">بطاقة الهوية</string>
+    <string name="car_management">إدارة السيارات</string>
+    <string name="your_location">مكانك</string>
+    <string name="find_a_ride">بحث عن رحلة</string>
+    <string name="offer_a_ride">إنشاء رحلة</string>
+    <string name="expected_price">السعر المتوقع</string>
+    <string name="km">كم</string>
+    <string name="set_price_for_seat">سعر المقعد</string>
+    <string name="set_number_of_seat">عدد المقاعد</string>
+    <string name="create">إنشاء</string>
+    <string name="request">طلب</string>
+    <string name="seat">مقعد</string>
+    <string name="trips">رحلات</string>
+    <string name="trip_details">تفاصيل الرحلة</string>
+    <string name="pickup_location">مكان بدء الرحلة</string>
+    <string name="drop_location">مكان إنهاء الرحلة</string>
+    <string name="time">الوقت</string>
+    <string name="distance">المسافة</string>
+    <string name="available_seats">المقاعد المتاحة</string>
+    <string name="driver_instructions">تعليمات الكابتن</string>
+    <string name="verifications">التفعيل</string>
+
+    <string name="seat_price">سعر المقعد</string>
+    <string name="contribution_to_the_driver">مساهمة للكابتن</string>
+    <string name="booking_fees">ضريبة الحجز</string>
+    <string name="price_for_seat">سعر المقعد</string>
+    <string name="booking">حجز</string>
+    <string name="notifications">الإشعارات</string>
+    <string name="old_password">كلمة المرور القديمة</string>
+    <string name="new_password">كلمة المرور الجديدة</string>
+    <string name="repeat_new_password">تأكيد كلمة المرور الجديدة</string>
+    <string name="save">حفظ</string>
+    <string name="add_money">إضافة رصيد</string>
+    <string name="identity">الهوية</string>
+    <string name="passport">جواز سفر</string>
+    <string name="upload">تحميل الصورة</string>
+    <string name="upload_photos_of_your_licence_or_identity_card">رفع صور للهوية أو الإقامة</string>
+    <string name="recharge_your_wallet">إعادة شحن المحفظة</string>
+    <string name="credit_card">بطاقة الإئتمان</string>
+    <string name="recharge_card">بطاقة مسبقة الدفع</string>
+    <string name="name_on_card">رقم بطاقة الشحن</string>
+    <string name="card_number">رقم البطاقة</string>
+    <string name="exp_date">تاريخ الإنتهاء</string>
+    <string name="ccv">CCV</string>
+    <string name="upload_required_photos">تحميل الصور المطلوبة</string>
+    <string name="car_licence">رخصة القيادة</string>
+    <string name="car_paper">استمارة السيارة</string>
+    <string name="reviews">تقييمات</string>
+    <string name="review">رأي</string>
+    <string name="good">ممتاز</string>
+    <string name="average">جيد</string>
+    <string name="below_average">لا بأس</string>
+    <string name="poor">لا اوصي بالتعامل معه</string>
+    <string name="new_user">مستخدم جديد؟</string>
+    <string name="forget_password">نسيت كلمة المرور؟</string>
+    <string name="enter_confirmation_code_sended_to_your_phone_number">ادخل الكود المرسل الي رقم هاتفك</string>
+    <string name="cars">السيارات</string>
+    <string name="notification_settings">إعدادات الإشعارات</string>
+    <string name="depends_on_your_need">تعتمد علي حسب رغبتك</string>
+    <string name="mohammed_sharabash">محمد شرباش</string>
+    <string name="delete">حذف</string>
+    <string name="based_on">بناءاً علي</string>
+    <string name="music">الموسيقا</string>
+    <string name="air_conditioner">التكييف</string>
+    <string name="charger">شاحن</string>
+    <string name="smoking">التدخين</string>
+    <string name="rest_in_road">التوقف للراحة</string>
+    <string name="speaking">الدردشة</string>
+    <string name="identity_verification">بطاقة الهوية</string>
+    <string name="select_country">اختار الدولة</string>
+    <string name="all">كل</string>
+    <string name="no_car_added">لا يوجد سيارات تم إضافتها</string>
+    <string name="terms_and_conditions">الشروط والاحكام</string>
+    <string name="requests">الطلبات</string>
+    <string name="change_password">تغيير كلمة المرور</string>
+    <string name="change_language">تغيير اللغة</string>
+    <string name="contact_us">تواصل معنا</string>
+    <string name="faq">الاسئله الشائعه</string>
+    <string name="cancel">إلغاء</string>
+    <string name="arabic">العربية</string>
+    <string name="english">English</string>
+    <string name="language">اللغة</string>
+    <string name="choose_application_language">تغيير لغة التطبيق</string>
+    <string name="enter_your_phone_number_and_a_temporary_password_will_be_sended_to_your_phone">أدخل رقم هاتفك وسيتم إرسال كلمة المرور المؤقتة إلى هاتفك</string>
+    <string name="car_brand">ماركة السيارة</string>
+    <string name="select_car_brand">اختر ماركة السيارة</string>
+    <string name="select_car_model">اختر موديل السيارة</string>
+    <string name="car_model">موديل السيارة</string>
+    <string name="car_type">نوع السيارة</string>
+    <string name="select_car_type">اختر نوع السيارة</string>
+    <string name="select_car_color">اختر لون السيارة</string>
+    <string name="car_color">لون السيارة</string>
+    <string name="select_production_year">حدد سنة الإنتاج</string>
+    <string name="_2019">2019</string>
+    <string name="enter_car_plate_number">أدخل رقم لوحة السيارة</string>
+    <string name="select_car_seats">اختر مقاعد السيارة</string>
+    <string name="_1">1</string>
+    <string name="ok">موافق</string>
+    <string name="click_ok">اضغط موافق</string>
+    <string name="_0">0</string>
+    <string name="expected_distance">المسافة المتوقعة</string>
+    <string name="two_passengers_in_the_back_seat">اثنان من الركاب في المقعد الخلفي</string>
+    <string name="set_starting_location">تعيين موقع البدء</string>
+    <string name="set_end_location">تعيين موقع النهاية</string>
+    <string name="starting_time">وقت البدء</string>
+    <string name="reaching_time">وقت الوصول</string>
+    <string name="select_car">اختر سيارة</string>
+    <string name="no_trips">لا يوجد رحلات</string>
+    <string name="start_trip">بدء الرحلة</string>
+    <string name="cancel_trip">إلغاء الرحلة</string>
+    <string name="end_trip">إنهاء الرحلة</string>
+    <string name="or2">|</string>
+    <string name="request_booking">طلب حجز</string>
+    <string name="paymenttype">نوع الدفع</string>
+    <string name="cash">كاش</string>
+    <string name="car_insurance">تأمين السيارة</string>
+    <string name="reject">رفض</string>
+    <string name="accept">قبول</string>
+    <string name="no_person">لا يوجد اشخاص</string>
+    <string name="rate_passenger">تقييم المسافر</string>
+    <string name="trip_reservation_requests">طلبات حجز الرحلة</string>
+    <string name="rate">التقييم</string>
+    <string name="passengers">المسافرين</string>
+    <string name="no_passengers_book_this_trip_until_now">لا يوجد حجز لهذه الرحلة حتي الان</string>
+    <string name="no_rate">لا يوجد تقييم</string>
+    <string name="verify">تفعيل</string>
+    <string name="thanks_for_using_rehla">نشكرك لاستخدام رحلة</string>
+    <string name="rate_the_passenger">تقييم المسافر</string>
+    <string name="select">اختيار</string>
+    <string name="write_your_comment">اكتب تعليق</string>
+    <string name="rate_the_driver">تقييم الكابتن</string>
+    <string name="enter_code">ادخل الكود</string>
+    <string name="write_some_detail_about_your_ride">الرجاء كتابة نبذه عنك و معلومات عن الرحلة مثل:
+*الرجاء حمل هويتك الشخصية معك.
+*يسمح بحمل حقيبة سفر واحدة.
+*ما هو النادي الرياضي المفضل لك!.
+*حدثنا عن هواياتك و اهتماماتك كي يتعرف عليك الاخرين في نفس الرحلة.</string>
+    <string name="total_balance">الرصيد الإجمالي</string>
+    <string name="send_to_bank">سحب الرصيد</string>
+    <string name="no_transaction">لا يوجد معاملات مالية</string>
+    <string name="no_reviews">لا يوجد تعليقات</string>
+    <string name="We_will_transfer">سوف يتم تحويل المبلغ الي حسابك خلال 5 الي 7 ايام عمل</string>
+    <string name="bank_name">اسم البنك</string>
+    <string name="no_messages">لا يوجد شات</string>
+    <string name="write_a_message">اكتب الرسالة</string>
+    <string name="identity_number">رقم الهوية</string>
+    <string name="enter_your_email_to_verify_and_check_your_email_to_complete_verification">أدخل بريدك الإلكتروني للتحقق وافحص بريدك الإلكتروني لإكمال العملية</string>
+    <string name="enter_email">أدخل البريد الإلكتروني</string>
+    <string name="check_your_email_to_complete_verification">تحقق من بريدك الإلكتروني لإكمال التحقق</string>
+    <string name="skip">تخطي</string>
+    <string name="car_plate">لوحة السيارة</string>
+    <string name="car_sequence_number">رقم تسلسل السيارة</string>
+    <string name="looking_for_a_trip">هل تبحث عن رحلة ؟</string>
+    <string name="follow_the_others_to_your_destination">رافق الاخرين الي جهتك المطلوبة</string>
+    <string name="developed_by">تم تطويره بواسطة: </string>
+    <string name="native_tech">Native Tech</string>
+    <string name="saudi">سعودي</string>
+    <string name="foreigner">غير سعودي</string>
+    <string name="travel_bag">حقيبة سفر</string>
+    <string name="create_ride_alert">إنشاء تنبية للرحلة</string>
+    <string name="credit_card_will_be_activated_soon">سوف يتم تفعيل البطاقة الائتمانية في القريب العاجل</string>
+    <string name="iban_number">رقم الإيبان</string>
+    <string name="amount_of_money">المبلغ المطلوب</string>
+    <string name="complaint_and_suggestion">الشكاوي والمقترحات</string>
+    <string name="enter_your_card_number">إضافة رقم بطاقة الشحن</string>
+    <string name="no_notifications">لا يوجد إشعارات</string>
+    <string name="naive_tech_info_gmail_com">native.tech.info@gmail.com</string>
+    <string name="how_many_seats_do_you_want_to_book">كم مقعد تريد حجزه ؟</string>
+    <string name="choose_your_payment_method">اخنر طريقة الدفع</string>
+    <string name="rides_offered">رحلات معروضة</string>
+
+    <string name="error_1">هذا الهاتف موجود بالفعل ، الرجاء اختيار رقم اخر</string>
+    <string name="error_2">لا يوجد بيانات</string>
+    <string name="error_3">حدث خطا ما، الرجاء المحاولة لاحقا</string>
+    <string name="error_4">هذا البريد الالكتروني موجود بالفعل ، الرجاء المحاولة لاحقا</string>
+    <string name="error_5">خطأ في حفظ الصورة</string>
+    <string name="error_6">كود التفعيل غير صحيح</string>
+    <string name="error_7">البريد الالكتروني او كلمة المرور غير صحيحة</string>
+    <string name="error_8">غير مسموح بالدخول</string>
+    <string name="error_9">اقل عدد مسموح به 6</string>
+    <string name="error_10">هذا المستخدم غير موجود</string>
+
+    <string name="error_11">كلمة المرور الحالية غير صحيحة</string>
+    <string name="error_12">صورة غير صالحة</string>
+    <string name="error_13">بريد الالكتروني غير صالح</string>
+    <string name="error_14">هذه السيارة لا تنتمي لك</string>
+    <string name="error_15">هذه السيارة غير موجودة</string>
+    <string name="error_16">رحلة غير صالحة</string>
+    <string name="error_17">حالة هذه الرحلة غير صالحة</string>
+    <string name="error_18">رقم الهاتف غير مفعل</string>
+    <string name="error_19">لا يوجد مقاعد متاحة</string>
+    <string name="error_20">لا يوجد مقاعد متاحة</string>
+
+    <string name="error_21">حدث خطأ غير متوقع</string>
+    <string name="error_22">لا يمكن حذف السيارة لانها مرتبطة برحلة</string>
+    <string name="error_23">لا يوجد بيانات تم ارجاعها</string>
+    <string name="error_24">رقم الكارت غير صحيح</string>
+    <string name="error_25">انت قمت بحجز هذه الرحلة من قبل</string>
+    <string name="error_26">لا يمكنك حجز هذه الرحلة لانك السائق</string>
+    <string name="error_29">رصيدك اقل من ١٠٠</string>
+    <string name="error_30">لا يمكنك بدء الرحلة قبل موعد انطلاقها</string>
+    <string name="error_31">سوف يتم تفعيل سيارتك في القريب العاجل</string>
+    <string name="error_32">رصيدك قليل جدا</string>
+    <string name="default_message">حدث خطأ ما برجاء المحاولة لاحقا</string>
+    <string name="error">خطأ</string>
+
+
+    <string name="wasl_error_register_503">الرجاء التاكد من رقم الهويه او الاقامه او تاريخ الميلاد</string>
+    <string name="wasl_error_register_420">رقم الهوية غير صحيح</string>
+    <string name="wasl_error_register_421">الرجاء التاكد من ان تاريخ الميلاد صحيح</string>
+
+
+    <string name="wasl_error_addCar_503">رقم اللوحة غير موجود</string>
+    <string name="wasl_error_addCar_420">الرقم التسلسلي للسيارة غير صحيح </string>
+    <string name="wasl_error_addCar_421">قيمة غير صالحة في PlateLetterMiddle</string>
+
+
+
+    <string name="wasl_error_addTrip_413">الرقم المرجعي غير موجود</string>
+    <string name="wasl_error_addTrip_420">المسافة بالمتر غير صحيحة</string>
+    <string name="wasl_error_addTrip_421">المسافة بالمتر غير صحيحة</string>
+
+
+    <string name="no_booking">لا يوجد حجز</string>
+    <string name="select_time">وقت الرحلة</string>
+    <string name="track_trip_on_the_map">تتبع الرحلة علي الخريطة</string>
+    <string name="please_verify_your_identity">من فضلك اكد هويتك</string>
+    <string name="please_add_car_first">من فضلك اضف سيارة اولا !</string>
+    <string name="add_car">اضف سيارة</string>
+
+    <string name="title_activity_view_on_map">Map</string>
+
+    <string name="check_internet">من فضلك تأكد من الانترنت</string>
+    <string name="reservations">الحجوزات</string>
+    <string name="details">التفاصيل</string>
+    <string name="choose_image_method">طريقة رفع الصورة</string>
+    <string name="take_a_picture">إلتقاط صورة</string>
+    <string name="photo_album">البوم صور</string>
+    <string name="title_activity_map">Map</string>
+
+
+    <string name="car_not_verified">جاري مراجعه الملفات والاوراق الثبوتيه الخاصه بسيارتك وسيتم تفعيلها في القريب العاجل</string>
+    <string name="navigation_drawer_close">Close  navigation drawer</string>
+    <string name="enter_your_message">ادخل رسالتك</string>
+    <string name="waiting_trips">الرحلات المنتظرة</string>
+    <string name="book">إحجز</string>
+    <string name="verify_account">تأكيد الحساب</string>
+    <string name="you_are_disabled">تم تعطيل حسابك</string>
+    <string name="note">ملاحظة</string>
+    <string name="error_36"> رصيدك اقل من ثمن المقاعد المحجوزة</string>
+    <string name="no_internet">لا يوجد انترنت !</string>
+    <string name="check_internet_str">من فضلك تأكد من الانترنت</string>
+    <string name="reload">اعادة المحاولة</string>
+    <string name="esc">إلغاء</string>
+
+
+    <string-array name="holiday_names">
+
+        <item>Republic Day</item>
+        <item>Maha Shivaratri</item>
+        <item>Good Friday</item>
+
+        <item>Ugadi</item>
+        <item>Dr Ambedkar Jayanti</item>
+        <item>Ramazan - Idu\'l Fitr</item>
+
+
+        <item>Independence Day</item>
+        <item>Bakri Id - Idu\'l Zuha</item>
+        <item>Dussehra</item>
+
+
+        <item>Dussehra</item>
+        <item>Muharram</item>
+
+        <item>Diwali</item>
+        <item>Kannada Rajyothsava</item>
+
+    </string-array>
+
+</resources>

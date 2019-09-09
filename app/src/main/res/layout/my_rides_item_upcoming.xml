@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+     android:layout_marginTop="@dimen/dime_8"
+    android:layout_marginBottom="@dimen/dime_8"
+    android:background="@drawable/button_shap_white"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/dime_5"
+        >
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dime_5"
+            >
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img"
+                android:layout_width="@dimen/profile_image_size"
+                android:layout_height="@dimen/profile_image_size"
+                android:layout_gravity="center"
+                />
+        </android.support.v7.widget.LinearLayoutCompat>
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="1"
+            >
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/_10_height"
+                android:gravity="center"
+                >
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+
+                    >
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:orientation="horizontal"
+                        >
+                        <com.NativeTech.rehla.Utills.MyTextViewBold
+                            android:id="@+id/name"
+                            android:textAppearance="@style/TextAppearance.Compat.Notification.Info"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mohammed_sharabash"
+                            android:layout_gravity="center"
+                            android:textAllCaps="false"
+                            android:textColor="@color/blakcolor"
+                            style="@style/tvStyleBold"
+                            />
+                        <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/_15_height"
+                            android:layout_height="@dimen/_15_height"
+                            app:srcCompat="@drawable/ic_verified"
+                            android:layout_marginStart="@dimen/_10_height"
+                            android:layout_marginEnd="@dimen/_10_height"
+                            android:layout_gravity="center"
+                            />
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_weight="0.3"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <com.NativeTech.rehla.Utills.MyTextViewBold
+                            android:id="@+id/price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/_0"
+                            style="@style/tvStyleBold"
+                            android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+                               android:textAllCaps="false"
+                            android:textColor="@color/app_color"
+                              />
+
+                        <com.NativeTech.rehla.Utills.MyTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                             android:paddingStart="@dimen/dime_3"
+                            android:text="@string/sar"
+                            android:lines="1"
+                            android:ellipsize="end"
+                            android:breakStrategy="simple"
+                            style="@style/tvStyleBold"
+                            android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+                             android:textAllCaps="false"
+                            android:textColor="@color/app_color"
+                            tools:targetApi="m" />
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                </android.support.v7.widget.LinearLayoutCompat>
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    >
+                    <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    >
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+
+                        >
+                        <com.NativeTech.rehla.Utills.MyTextView
+                            android:id="@+id/car_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Honda Civic"
+                            android:layout_gravity="top"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tab_border"
+                           android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+                            />
+                        <com.NativeTech.rehla.Utills.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="|"
+                            android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+                            android:paddingStart="@dimen/dime_5"
+                            android:paddingEnd="@dimen/dime_5"
+                            android:layout_gravity="top"
+                            android:textAllCaps="false"
+                            android:textStyle="bold"
+                            android:textColor="@color/tab_border"
+                                                       />
+
+                        <com.NativeTech.rehla.Utills.MyTextView
+                            android:id="@+id/car_color"
+                            android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="white"
+                            android:layout_gravity="top"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tab_border"
+                             />
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                </android.support.v7.widget.LinearLayoutCompat>
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.3"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <com.NativeTech.rehla.Utills.MyTextView
+                            android:id="@+id/seat_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/dime_5"
+                            android:paddingEnd="@dimen/dime_5"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tab_border"
+                            android:textSize="@dimen/_9ssp"
+                            android:textStyle="bold" />
+
+                        <com.NativeTech.rehla.Utills.MyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/seat"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tab_border"
+                            android:textSize="@dimen/_9ssp" />
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+                </android.support.v7.widget.LinearLayoutCompat>
+
+                <RatingBar
+                    android:id="@+id/rate"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/app_color"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:progressTint="@color/app_color"
+                    android:rating="5"
+                    android:layout_gravity="start"
+                    android:stepSize="0.1"
+                    />
+            </android.support.v7.widget.LinearLayoutCompat>
+        </android.support.v7.widget.LinearLayoutCompat>
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/dime_10"
+        android:weightSum="1"
+        >
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="@dimen/profile_image_size"
+            android:layout_height="match_parent"
+            >
+            <com.NativeTech.rehla.Utills.VerticalTextView
+                android:id="@+id/statusRide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="@dimen/_10_height"
+                android:paddingTop="@dimen/dime_5"
+                android:paddingBottom="@dimen/dime_5"
+                android:paddingEnd="@dimen/_10_height"
+                android:layout_gravity="center"
+                android:rotation="180"
+                android:text=""
+                android:textAllCaps="false"
+                android:background="@drawable/ride_status_green"
+                android:textColor="@color/whitecolor"
+                android:textSize="@dimen/_10ssp"
+                android:visibility="visible" />
+
+        </android.support.v7.widget.LinearLayoutCompat>
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dime_5"
+            android:orientation="vertical"
+            >
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <!--<android.support.v7.widget.AppCompatImageView
+                    android:layout_width="@dimen/icon_size_small"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_from_to"
+                    />-->
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/dime_5"
+                    android:paddingEnd="@dimen/dime_5"
+                    android:orientation="vertical">
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="@dimen/icon_size_small"
+                    android:layout_height="@dimen/icon_size_small"
+                    android:background="@drawable/button_shap_circle_green"
+                    />
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="@dimen/view_height"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.6"
+                        android:background="@color/tab_border"
+                        />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="@dimen/icon_size_small"
+                    android:layout_height="@dimen/icon_size_small"
+                    android:background="@drawable/button_shap_circle_orange" />
+                </android.support.v7.widget.LinearLayoutCompat>
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                     android:orientation="vertical"
+                    >
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dime_5"
+                        android:orientation="horizontal"
+                        >
+                        <com.NativeTech.rehla.Utills.MyTextView
+                            android:id="@+id/from_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="12:00 am"
+                            android:layout_gravity="top"
+                            android:paddingStart="@dimen/dime_5"
+                            android:paddingEnd="@dimen/dime_5"
+                            android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tab_border"
+                             />
+                        <com.NativeTech.rehla.Utills.MyTextView
+                            android:id="@+id/from_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+
+                            android:text="Washington pearl road ,new York"
+                            android:layout_gravity="center"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tab_border"
+                             />
+
+
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                         android:layout_marginTop="@dimen/dime_5"
+                        android:orientation="horizontal"
+                        >
+                        <com.NativeTech.rehla.Utills.MyTextView
+                            android:id="@+id/to_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="12:50 am"
+                            android:layout_gravity="bottom"
+                            android:paddingStart="@dimen/dime_5"
+                            android:paddingEnd="@dimen/dime_5"
+                            android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+
+                            android:textAllCaps="false"
+                            android:textColor="@color/tab_border"
+                             
+                            />
+                        <com.NativeTech.rehla.Utills.MyTextView
+                            android:id="@+id/to_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Harison, East Network, new York"
+                            android:layout_gravity="center"
+                            android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+
+                            android:textAllCaps="false"
+                            android:textColor="@color/tab_border"
+                             />
+
+
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+
+                </android.support.v7.widget.LinearLayoutCompat>
+
+            </android.support.v7.widget.LinearLayoutCompat>
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:gravity="center"
+                 android:layout_marginEnd="@dimen/dime_5"
+                android:layout_marginStart="@dimen/dime_5"
+                android:layout_marginTop="@dimen/dime_20"
+                android:weightSum="3"
+                >
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    >
+                    <com.NativeTech.rehla.Utills.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/date"
+                        android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+
+                        android:textAllCaps="false"
+                        android:textColor="@color/tab_border"
+                         />
+
+                    <com.NativeTech.rehla.Utills.MyTextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="23 Feb, 18"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        android:textColor="@color/app_color"
+                        android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+
+                        />
+
+                </android.support.v7.widget.LinearLayoutCompat>
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    >
+                    <com.NativeTech.rehla.Utills.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/expected_time"
+                        android:textAllCaps="false"
+                        android:textColor="@color/tab_border"
+                        android:textSize="@dimen/_12ssp"
+                        />
+
+                    <com.NativeTech.rehla.Utills.MyTextViewBold
+                        android:id="@+id/expected_time"
+                        android:layout_width="wrap_content"
+                        style="@style/tvStyleBold"
+                        android:layout_height="wrap_content"
+                        android:text="12:20 am"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        android:textColor="@color/app_color"
+                        android:textSize="@dimen/_12ssp"
+                        />
+
+                </android.support.v7.widget.LinearLayoutCompat>
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal"
+                    >
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="0.2"
+                        >
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="0.4"
+                        >
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:id="@+id/message"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:background="@drawable/ride_status_green_2"
+                            android:layout_marginStart="@dimen/dime_5"
+                            android:layout_marginEnd="@dimen/dime_5"
+                            android:visibility="visible"
+                            >
+                            <android.support.v7.widget.AppCompatImageView
+                                android:id="@+id/btn_message"
+                                android:layout_width="@dimen/dime_26"
+                                android:layout_height="@dimen/dime_26"
+                                android:padding="@dimen/dime_3"
+                                android:scaleType="centerInside"
+                                app:srcCompat="@drawable/ic_chat"
+                                />
+                        </android.support.v7.widget.LinearLayoutCompat>
+                    </android.support.v7.widget.LinearLayoutCompat>
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:id="@+id/call"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="0.4"
+                        >
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+
+                            android:background="@drawable/ride_status_green_2"
+                            android:layout_marginStart="@dimen/dime_5"
+                            android:layout_marginEnd="@dimen/dime_5"
+                            android:visibility="visible"
+                            >
+                            <android.support.v7.widget.AppCompatImageView
+                                android:id="@+id/btn_call"
+                                android:layout_width="@dimen/dime_26"
+                                android:padding="@dimen/dime_3"
+                                android:scaleType="centerInside"
+                                android:layout_height="@dimen/dime_26"
+                                app:srcCompat="@drawable/ic_phone_white"
+                                />
+                        </android.support.v7.widget.LinearLayoutCompat>
+                    </android.support.v7.widget.LinearLayoutCompat>
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:id="@+id/cancel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:orientation="vertical"
+                        android:visibility="visible"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/dime_5"
+                        android:layout_marginEnd="@dimen/dime_5"
+                        android:gravity="center"
+                        >
+
+                        <com.NativeTech.rehla.Utills.MyTextViewBold
+                            android:id="@+id/btn_cancel"
+                            android:layout_width="match_parent"
+                            android:minHeight="@dimen/dime_26"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cancel"
+                            android:gravity="center"
+                            android:textAppearance="@style/TextAppearance.Compat.Notification"
+                            android:textAllCaps="false"
+                            android:background="@drawable/ride_status_red2"
+
+                            android:textColor="@color/whitecolor"
+                            />
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                </android.support.v7.widget.LinearLayoutCompat>
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:id="@+id/canceled_ride"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    >
+                    <com.NativeTech.rehla.Utills.MyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cancel_reason"
+                        android:textAllCaps="false"
+                        android:textColor="@color/tab_border"
+                        android:textSize="@dimen/txt_tab_size"
+                        />
+
+                    <com.NativeTech.rehla.Utills.MyTextViewBold
+                        android:id="@+id/reasons"
+                        android:layout_width="wrap_content"
+                        style="@style/tvStyleBold"
+                        android:layout_height="wrap_content"
+                        android:text="Car Problem"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        android:textColor="@color/app_color"
+                        android:textSize="@dimen/forgot_txt_size"
+                        />
+
+                </android.support.v7.widget.LinearLayoutCompat>
+
+
+            </android.support.v7.widget.LinearLayoutCompat>
+        </android.support.v7.widget.LinearLayoutCompat>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+
+</LinearLayout>
+</LinearLayout>

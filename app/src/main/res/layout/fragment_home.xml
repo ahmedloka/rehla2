@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/back_home"
+            />
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blakcolor"
+            android:alpha="0.5">
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_45_height"
+            >
+            <com.NativeTech.rehla.Utills.ButtonBold
+                android:id="@+id/find_ride"
+                android:layout_width="match_parent"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_marginStart="@dimen/dime_26"
+                android:layout_marginEnd="@dimen/dime_26"
+                android:layout_marginTop="@dimen/dime_38"
+                android:layout_marginBottom="@dimen/dime_15"
+                 android:gravity="center"
+                android:layout_gravity="center"
+                 android:textColor="@color/whitecolor"
+                android:text="@string/find_ride"
+                android:background="@drawable/button_shape_border_green"
+                />
+            <com.NativeTech.rehla.Utills.ButtonBold
+                android:id="@+id/offer_ride"
+                 android:layout_width="match_parent"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_marginTop="@dimen/dime_5"
+                android:layout_marginStart="@dimen/dime_26"
+                android:layout_marginEnd="@dimen/dime_26"
+                 android:layout_marginBottom="@dimen/dime_15"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textColor="@color/whitecolor"
+                android:text="@string/offer_ride"
+                android:background="@drawable/button_shap_border_gold"
+                />
+
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+    </FrameLayout>
+</android.support.constraint.ConstraintLayout>

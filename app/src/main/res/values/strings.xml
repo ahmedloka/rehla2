@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">REHLA</string>
+    <string name="my_rides">MY RIDES</string>
+    <string name="upcomming_rides">Upcoming Rides</string>
+    <string name="history_rides">Ride History</string>
+    <string name="sar">SAR</string>
+    <string name="date">Date</string>
+    <string name="expected_time">Expected Time</string>
+    <string name="rated">Rated</string>
+    <string name="rate_rider">Rate Captin</string>
+    <string name="cancel_reason">Cancel Reason</string>
+    <string name="message">Message</string>
+    <string name="call">Call</string>
+    <string name="rehla">REHLA</string>
+    <string name="password">Password</string>
+    <string name="email_or_mobile_number">Email or Mobile Number</string>
+    <string name="login">Login</string>
+    <string name="or">OR</string>
+    <string name="login_with_facebook">Login With Facebook</string>
+    <string name="country_code">Country Code</string>
+    <string name="date_of_birth">Date Of Birth :</string>
+    <string name="city">City</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="phone">Phone</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="i_have_read_and_accept_terms_and_conditions">I have read and accept terms and conditions</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="send">Send</string>
+    <string name="send_again">Send Again</string>
+    <string name="don_t_get_verification_code">Don\'t get verification code</string>
+
+    <string name="search">Search</string>
+    <string name="bookmark">Bookmarks</string>
+    <string name="more">More</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="find_ride">Find Ride</string>
+    <string name="offer_ride">Offer Ride</string>
+    <string name="captin_trips">Captin Trips</string>
+    <string name="messages">Messages</string>
+    <string name="passenger_trips">My Reservations</string>
+    <string name="waiting_trips_alert">My Favourite Trips</string>
+    <string name="profile">Profile</string>
+    <string name="notification">Notification</string>
+    <string name="wallet">Wallet</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Logout</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="rating">Rating</string>
+    <string name="preference">Preference</string>
+    <string name="licence">Licence</string>
+    <string name="car_management">Car Management</string>
+    <string name="your_location">Your Location</string>
+    <string name="find_a_ride">Find A Ride</string>
+    <string name="offer_a_ride">Offer A Ride</string>
+    <string name="expected_price">Expected Price</string>
+    <string name="km">KM</string>
+    <string name="set_price_for_seat">Set Price For Seat</string>
+    <string name="set_number_of_seat">Set Number Of Seat</string>
+    <string name="create">Create</string>
+    <string name="request">Request</string>
+    <string name="seat">Seat</string>
+    <string name="trips">Trips</string>
+    <string name="trip_details">Trip Details</string>
+    <string name="pickup_location">Pickup Location</string>
+    <string name="drop_location">Drop Location</string>
+    <string name="time">Time</string>
+    <string name="distance">Distance</string>
+    <string name="available_seats">Available Seats</string>
+    <string name="driver_instructions">Driver Instructions</string>
+    <string name="verifications">Verifications</string>
+    <string name="seat_price">Seat Price</string>
+    <string name="contribution_to_the_driver">Contribution to the driver</string>
+    <string name="booking_fees">Booking fees</string>
+    <string name="price_for_seat">Price for seat</string>
+    <string name="booking">Booking</string>
+    <string name="notifications">Notifications</string>
+    <string name="old_password">old password</string>
+    <string name="new_password">new password</string>
+    <string name="repeat_new_password">repeat new password</string>
+    <string name="save">save</string>
+    <string name="add_money">Charge Wallet</string>
+    <string name="identity">identity</string>
+    <string name="passport">Passport</string>
+    <string name="upload">Upload</string>
+    <string name="upload_photos_of_your_licence_or_identity_card">Upload photo of your identity or Ekama</string>
+    <string name="recharge_your_wallet">Recharge Your Wallet</string>
+    <string name="credit_card">Credit Card</string>
+    <string name="recharge_card">Recharge Card</string>
+    <string name="name_on_card">Name on card</string>
+    <string name="card_number">Card Number</string>
+    <string name="exp_date">Exp.Date</string>
+    <string name="ccv">CCV</string>
+    <string name="upload_required_photos">Upload Required Photos</string>
+    <string name="car_licence">Car Licence</string>
+    <string name="car_paper">Car Paper</string>
+    <string name="reviews">Reviews</string>
+    <string name="review">Review</string>
+    <string name="excellent">Outstanding</string>
+    <string name="good">Excellent</string>
+    <string name="average">Good</string>
+    <string name="below_average">Poor</string>
+    <string name="poor">Not Recommend</string>
+    <string name="new_user">New user?</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="enter_confirmation_code_sended_to_your_phone_number">Enter confirmation code sended to your phone number</string>
+    <string name="cars">Cars</string>
+    <string name="notification_settings">Notification Settings</string>
+    <string name="depends_on_your_need">Depends on your need</string>
+    <string name="mohammed_sharabash">Mohammed Sharabash</string>
+    <string name="home">Home</string>
+    <string name="delete">Delete</string>
+    <string name="based_on">Based on</string>
+    <string name="music">Music</string>
+    <string name="air_conditioner">Air Conditioner</string>
+    <string name="charger">Charger</string>
+    <string name="smoking">Smoking</string>
+    <string name="rest_in_road">Rest in Road</string>
+    <string name="speaking">Speaking</string>
+    <string name="identity_verification">Identity Card</string>
+    <string name="select_country">Select Country</string>
+    <string name="all">All</string>
+    <string name="no_car_added">No Car Added</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="requests">Requests</string>
+    <string name="change_password">Change Password</string>
+    <string name="change_language">Change Language</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="faq">FAQ</string>
+    <string name="cancel">Cancel</string>
+    <string name="arabic">العربية</string>
+    <string name="english">English</string>
+    <string name="language">Language</string>
+    <string name="choose_application_language">Choose Application Language</string>
+    <string name="enter_your_phone_number_and_a_temporary_password_will_be_sended_to_your_phone">Enter your phone number and a temporary password will be sended to your phone</string>
+    <string name="car_brand">Car Brand</string>
+    <string name="select_car_brand">Select Car Brand</string>
+    <string name="select_car_model">Select Car Model</string>
+    <string name="car_model">Car Model</string>
+    <string name="car_type">Car Type</string>
+    <string name="select_car_type">Select Car Type</string>
+    <string name="select_car_color">Select Car Color</string>
+    <string name="car_color">Car Color</string>
+    <string name="select_production_year">Select Production Year</string>
+    <string name="_2019">2019</string>
+    <string name="enter_car_plate_number">Enter Car Plate Number</string>
+    <string name="select_car_seats">Select Car Seats</string>
+    <string name="_1">1</string>
+    <string name="ok">ok</string>
+    <string name="click_ok">Click Ok</string>
+    <string name="_0">0</string>
+    <string name="expected_distance">Expected Distance</string>
+    <string name="two_passengers_in_the_back_seat">Two passengers in the back seat</string>
+    <string name="set_starting_location">Set Starting Location</string>
+    <string name="set_end_location">Set End Location</string>
+    <string name="starting_time">Starting Time</string>
+    <string name="reaching_time">Reaching Time</string>
+    <string name="select_car">Select Car</string>
+    <string name="no_trips">No Trips</string>
+    <string name="start_trip">Start Trip</string>
+    <string name="cancel_trip">Cancel Trip</string>
+    <string name="end_trip">End Trip</string>
+    <string name="or2">|</string>
+    <string name="request_booking">Request Booking</string>
+    <string name="paymenttype">PaymentType</string>
+    <string name="cash">cash</string>
+    <string name="car_insurance">Car Insurance</string>
+    <string name="reject">Reject</string>
+    <string name="accept">Accept</string>
+    <string name="no_person">No Person</string>
+    <string name="rate_passenger">Rate Passenger</string>
+    <string name="trip_reservation_requests">Trip Reservation Requests</string>
+    <string name="rate">Rate</string>
+    <string name="passengers">Passengers</string>
+    <string name="no_passengers_book_this_trip_until_now">No passengers book this trip until now</string>
+    <string name="no_rate">No Rate</string>
+    <string name="verify">verify</string>
+    <string name="thanks_for_using_rehla">Thanks For Using REHLA</string>
+    <string name="rate_the_passenger">Rate The Passenger</string>
+    <string name="select">Select</string>
+    <string name="write_your_comment">Write Your Comment</string>
+    <string name="rate_the_driver">Rate The Driver</string>
+    <string name="enter_code">Enter code</string>
+    <string name="write_some_detail_about_your_ride">Please write something about you and trip instructions such as:\n* Please hold your personal identity with you.\n* Only one travel bag is allowed.\n* What is your favorite sport club!\n* Tell us about your hobbies and interests so that others will know you on the same trip.\n</string>
+    <string name="total_balance">Total Balance</string>
+    <string name="send_to_bank">Money Withdraw</string>
+    <string name="no_transaction">No Transaction</string>
+    <string name="no_reviews">No Reviews</string>
+    <string name="We_will_transfer">We will transfer money to your account during 5..7 working days</string>
+    <string name="bank_name">Bank Name</string>
+    <string name="no_messages">No Messages</string>
+    <string name="write_a_message">Write a message</string>
+    <string name="identity_number">identity Number</string>
+    <string name="enter_your_email_to_verify_and_check_your_email_to_complete_verification">Enter Your Email To verify and check your email to complete verification</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="check_your_email_to_complete_verification">check your email to complete verification</string>
+    <string name="skip">Skip</string>
+    <string name="car_plate">Car Plate</string>
+    <string name="car_sequence_number">Car Sequence Number</string>
+    <string name="looking_for_a_trip">Looking for a trip?</string>
+    <string name="follow_the_others_to_your_destination">Follow the others to your destination</string>
+    <string name="developed_by">Developed by :</string>
+    <string name="native_tech">Native Tech</string>
+    <string name="saudi">Saudi</string>
+    <string name="foreigner">Foreigner</string>
+    <string name="travel_bag">Travel Bag</string>
+    <string name="create_ride_alert">Create Ride Alert</string>
+    <string name="credit_card_will_be_activated_soon">Credit card will be activated soon</string>
+    <string name="iban_number">Iban Number</string>
+    <string name="amount_of_money">Amount of money</string>
+    <string name="complaint_and_suggestion">Complaint and Suggestion</string>
+    <string name="enter_your_card_number">Enter Your Card Number</string>
+    <string name="no_notifications">No Notifications</string>
+    <string name="naive_tech_info_gmail_com">native.tech.info@gmail.com</string>
+    <string name="how_many_seats_do_you_want_to_book">How many seats do you want to book?</string>
+    <string name="choose_your_payment_method">Choose your payment method</string>
+    <string name="rides_offered">rides offered</string>
+
+
+    <string name="error_1">This phone number is already exist,please choose another one.</string>
+    <string name="error_2">no data founded.</string>
+    <string name="error_3">some thing went wrong، please try later.</string>
+    <string name="error_4">This email is already exist,please choose another one.</string>
+    <string name="error_5">error while saving photo.</string>
+    <string name="error_6">Invalid verification code.</string>
+    <string name="error_7">Username or password is incorrect.</string>
+    <string name="error_8">invalid access token Relogin.</string>
+    <string name="error_9">Minimum length of password is 6.</string>
+    <string name="error_10">This user is not found</string>
+
+    <string name="error_11">old password is incorrect</string>
+    <string name="error_12">invalid photo</string>
+    <string name="error_13">invalid email</string>
+    <string name="error_14">this car not belongs to you</string>
+    <string name="error_15">this car not founded</string>
+    <string name="error_16">invalid trip</string>
+    <string name="error_17">Invalid Trip Status</string>
+    <string name="error_18">phone is not verified</string>
+    <string name="error_19">no available seats</string>
+    <string name="error_20">no available seats</string>
+
+
+    <string name="error_21">Result_error_invalid_action</string>
+    <string name="error_22">car can not be deleted because it is associated with a trip</string>
+    <string name="error_23">Result_No_Data_Returned</string>
+    <string name="error_24">Invalid Card Number</string>
+    <string name="error_25">You already booked this trip</string>
+    <string name="error_26">You can not book this trip because you are the driver</string>
+    <string name="error_29">balance less than 100</string>
+    <string name="error_30">Can not start the trip before the start time</string>
+    <string name="error_31">Your car will be verified soon</string>
+    <string name="error_32">Balance is too small</string>
+    <string name="default_message">Internal server error,please try again later</string>
+    <string name="error">Error</string>
+
+    <string name="wasl_error_register_503">Please check the identity number or residence date of birth</string>
+    <string name="wasl_error_register_420">Identity Number is not correct</string>
+    <string name="wasl_error_register_421">please make sure birth date is correct</string>
+
+    <string name="wasl_error_addCar_503">The plate number is not found</string>
+    <string name="wasl_error_addCar_420">Vehicle sequence number is not correct</string>
+    <string name="wasl_error_addCar_421">Invalid values at Plate Letter Middle</string>
+
+
+    <string name="wasl_error_addTrip_413">The given reference number was not found</string>
+    <string name="wasl_error_addTrip_420">Distance in Meters is not correct</string>
+    <string name="wasl_error_addTrip_421">Distance in Meters is not correct</string>
+
+
+    <string name="no_booking">No Booking</string>
+    <string name="select_time">select_time</string>
+    <string name="track_trip_on_the_map">Track trip on the map</string>
+    <string name="title_activity_view_on_map">Map</string>
+    <string name="please_verify_your_identity">please verify your identity</string>
+    <string name="please_add_car_first">Please Add Car first !</string>
+    <string name="add_car">Add Car</string>
+
+    <string name="check_internet">Please Check internet Connection</string>
+    <string name="reservations">Reservations</string>
+    <string name="details">Details</string>
+    <string name="choose_image_method">Choose Image Method</string>
+    <string name="take_a_picture">Take A Picture</string>
+    <string name="photo_album">Photo Album</string>
+    <string name="title_activity_map">Map</string>
+
+
+    <string name="car_not_verified">Your car will be enabled after reviewing car information</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close  navigation drawer</string>
+    <string name="enter_your_message">enter your message</string>
+    <string name="waiting_trips">Waiting Trops</string>
+    <string name="book">Book</string>
+    <string name="verify_account">Verify Account</string>
+    <string name="you_are_disabled">You are disabled</string>
+    <string name="note">Note</string>
+    <string name="error_36">balance less than Seats Cost</string>
+    <string name="no_internet">No Internet connection.</string>
+    <string name="check_internet_str">please check internet connection</string>
+    <string name="reload">Reload</string>
+    <string name="esc">Cancel</string>
+
+    <string-array name="holiday_names">
+
+        <item>Republic Day</item>
+        <item>Maha Shivaratri</item>
+        <item>Good Friday</item>
+
+        <item>Ugadi</item>
+        <item>Dr Ambedkar Jayanti</item>
+        <item>Ramazan - Idu\'l Fitr</item>
+
+
+        <item>Independence Day</item>
+        <item>Bakri Id - Idu\'l Zuha</item>
+        <item>Dussehra</item>
+
+
+        <item>Dussehra</item>
+        <item>Muharram</item>
+
+        <item>Diwali</item>
+        <item>Kannada Rajyothsava</item>
+
+    </string-array>
+
+</resources>

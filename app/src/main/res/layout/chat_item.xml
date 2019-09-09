@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/whitecolor"
+    android:layout_marginBottom="@dimen/view_height"
+    android:padding="@dimen/dime_10"
+    >
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/dime_5"
+        >
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dime_5"
+            >
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img"
+                android:layout_width="@dimen/dime_55"
+                android:layout_height="@dimen/dime_55"
+                android:layout_gravity="center"
+                />
+        </android.support.v7.widget.LinearLayoutCompat>
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1"
+            android:paddingStart="@dimen/dime_5"
+            android:paddingEnd="@dimen/dime_5"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            >
+            <com.NativeTech.rehla.Utills.MyTextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textAllCaps="false"
+                android:textColor="@color/app_color"
+
+                />
+            <com.NativeTech.rehla.Utills.MyTextView
+                android:id="@+id/body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+
+                android:maxLines="1"
+                android:textAllCaps="false"
+                android:textColor="@color/gray_selected"
+                 />
+        </android.support.v7.widget.LinearLayoutCompat>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+    <com.NativeTech.rehla.Utills.MyTextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+
+        android:textAllCaps="false"
+        android:layout_gravity="end"
+        android:layout_marginStart="@dimen/dime_10"
+        android:layout_marginEnd="@dimen/dime_10"
+        android:textColor="@color/gray_unselected"
+         />
+
+
+
+</LinearLayout>

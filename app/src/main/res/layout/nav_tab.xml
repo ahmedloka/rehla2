@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_tab"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    android:layout_margin="0dp"
+    android:layout_gravity="center_horizontal"
+   >
+
+    <ImageView
+        android:layout_width="@dimen/dime_26"
+        android:layout_height="@dimen/dime_26"
+        android:scaleType="fitXY"
+        android:id="@+id/nav_icon"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        />
+    <com.NativeTech.rehla.Utills.MyTextView
+        android:id="@+id/nav_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@android:color/black"
+        android:textSize="@dimen/_10ssp"
+        android:textColor="#81949c"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+
+        />
+
+</LinearLayout>

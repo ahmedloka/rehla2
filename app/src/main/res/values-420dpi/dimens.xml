@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name = "country_recycler_height">350dp</dimen>
+    <dimen name = "txt_size">22sp</dimen>
+    <dimen name = "lang_txt_size">20sp</dimen>
+    <dimen name = "txt_header_size">26sp</dimen>
+    <dimen name = "txt_head_size">32sp</dimen>
+    <dimen name = "forgot_txt_size">14sp</dimen>
+    <dimen name = "txt_tab_size">10.5sp</dimen>
+    <dimen name = "dot_size">60px</dimen>
+    <dimen name = "dot_width_size">15px</dimen>
+    <dimen name = "dot_height_size">5px</dimen>
+    <dimen name = "current_dot_size">60px</dimen>
+    <dimen name = "current_dot_width_size">15px</dimen>
+    <dimen name = "current_dot_height_size">5px</dimen>
+    <dimen name = "height_of_social_icons">60dp</dimen>
+    <dimen name = "margin">10dp</dimen>
+    <dimen name = "margint">10dp</dimen>
+    <dimen name = "Schedule_Result_margin">16dp</dimen>
+    <dimen name = "home_card_height">313px</dimen>
+    <dimen name = "grid_txt_size">18sp</dimen>
+    <dimen name = "grid_txt2_size">12sp</dimen>
+    <dimen name = "bottom_tab_icon_height">35dp</dimen>
+    <dimen name = "constraint_margin">16dp</dimen>
+    <dimen name = "tab_txt_size">14sp</dimen>
+    <dimen name = "request_card_margin">8dp</dimen>
+    <dimen name = "profile_image_size">55dp</dimen>
+    <dimen name = "my_profile_image_size">120dp</dimen>
+    <dimen name = "my_profile_slide">85dp</dimen>
+    <dimen name = "button_padding">5dp</dimen>
+    <dimen name = "trust_txt_size">12sp</dimen>
+    <dimen name = "margin_result_card">8dp</dimen>
+    <dimen name = "card_reslut_text">12sp</dimen>
+    <dimen name = "category_icon_Size">25dp</dimen>
+    <dimen name = "gallery_photo_height">230dp</dimen>
+    <dimen name = "time_txt_size">14sp</dimen>
+    <dimen name = "button_height_size">30dp</dimen>
+    <dimen name = "camera_icon_size">25dp</dimen>
+    <dimen name = "margin_login_size">65dp</dimen>
+    <dimen name = "mobile_login_size">50dp</dimen>
+    <dimen name = "margin_txt">4dp</dimen>
+    <dimen name = "margin_bottom_size">80dp</dimen>
+    <dimen name = "margin_button_bottom_size">59dp</dimen>
+    <dimen name = "margin_txt_bottom_size">35dp</dimen>
+    <dimen name = "margin_login2_size">80dp</dimen>
+    <dimen name = "mobile_login2_size">60dp</dimen>
+    <dimen name = "margin_bottom2_size">50dp</dimen>
+    <dimen name = "margin_button_bottom2_size">30dp</dimen>
+    <dimen name = "height_of_message_txt">260dp</dimen>
+    <dimen name = "height_of_call_icon">40dp</dimen>
+    <dimen name = "Button_margin">12dp</dimen>
+    <dimen name = "height_of_descripition_txt">110dp</dimen>
+    <dimen name = "height_of_home_slider">200dp</dimen>
+    <dimen name = "height_of_home_grid">400dp</dimen>
+    <dimen name = "promotion_image_height">150dp</dimen>
+    <dimen name = "card_txt_width">105dp</dimen>
+    <dimen name = "height_button">40dp</dimen>
+    <dimen name = "arrow_icon_size">14dp</dimen>
+    <dimen name = "view_height">1dp</dimen>
+    <dimen name = "home_Recycle_height">100dp</dimen>
+    <dimen name = "image_home_Recycle_height">60dp</dimen>
+    <dimen name = "tab_text_size">12sp</dimen>
+    <dimen name = "phone_pic_Size">350dp</dimen>
+    <dimen name = "margin_phone_pic_Size">140dp</dimen>
+    <dimen name = "register_phone_pic_Size">220dp</dimen>
+    <dimen name = "home_recycler_item_width_Size">160dp</dimen>
+    <dimen name = "home_recycler_item_height_Size">230dp</dimen>
+    <dimen name = "home_recycler_circle_image_size">40dp</dimen>
+    <dimen name = "card_txt_Size">14sp</dimen>
+    <dimen name = "small_txt">10sp</dimen>
+    <dimen name = "icon_size">22dp</dimen>
+    <dimen name = "icon_size_small">15dp</dimen>
+    <dimen name = "icon2_size">30dp</dimen>
+    <dimen name = "tab_height_size">30dp</dimen>
+    <dimen name = "height_card_small">140dp</dimen>
+    <dimen name = "fovorat_icon_size">40dp</dimen>
+    <dimen name = "margin_profile_love">8dp</dimen>
+    <dimen name = "height_grid_wishList">200dp</dimen>
+    <dimen name = "premium_height">60dp</dimen>
+    <dimen name = "Down_Arrow_size">22dp</dimen>
+    <dimen name = "provider_Recycler">320dp</dimen>
+
+    <dimen name = "hello_recycler_item_width_Size">270dp</dimen>
+
+
+    <dimen name = "margin_start_from_to">55dp</dimen>
+    <dimen name = "margin_top_from_to">60dp</dimen>
+    <dimen name = "height_from_to">145dp</dimen>
+
+    <dimen name = "margin_start_edit">245dp</dimen>
+    <dimen name = "margin_top_edit">50dp</dimen>
+
+
+
+
+
+
+    <dimen name="address_item_height">131dp</dimen>
+    <dimen name="pin_margin">10dp</dimen>
+    <dimen name="pin_height">43dp</dimen>
+    <dimen name="pin_width">33dp</dimen>
+    <dimen name="favourite_item_height">61dp</dimen>
+    <dimen name="safe_margin">20dp</dimen>
+    <dimen name="half_safe_margin">10dp</dimen>
+    <dimen name="app_bar_height">48dp</dimen>
+    <dimen name="most_ordered_item_height">170dp</dimen>
+    <dimen name="most_ordered_item_width">90dp</dimen>
+    <dimen name="navigation_drawer_width">328dp</dimen>
+    <dimen name="category_recycler_item_width">180dp</dimen>
+    <dimen name="category_recycler_item_height">116dp</dimen>
+    <dimen name="item_restaurant_height">100dp</dimen>
+    <dimen name="restaurant_card_height">140dp</dimen>
+    <dimen name="item_review_restaurant">90dp</dimen>
+    <dimen name="item_offers_height">362dp</dimen>
+    <dimen name="_10_height">10dp</dimen>
+    <dimen name="_15_height">15dp</dimen>
+    <dimen name="_30_height">30dp</dimen>
+    <dimen name="_45_height">45dp</dimen>
+    <dimen name="_53_height">53dp</dimen>
+    <dimen name="_84_height">84dp</dimen>
+    <dimen name="_210_height">210dp</dimen>
+    <dimen name="_4_height">4dp</dimen>
+    <dimen name="_20_height">20dp</dimen>
+    <dimen name="_1dp_height">1dp</dimen>
+    <dimen name="_4dp_height">4dp</dimen>
+    <dimen name="_88_dp_height">88dp</dimen>
+
+
+    <dimen name="_325_dp_width">325dp</dimen>
+    <dimen name="_232_dp_height">232dp</dimen>
+    <dimen name="_250_dp_width">250dp</dimen>
+    <dimen name="_263_dp_height">263dp</dimen>
+    <dimen name="_477_dp_height">477dp</dimen>
+    <dimen name="_559_dp_height">559dp</dimen>
+    <dimen name="_128_dp_height">128dp</dimen>
+    <dimen name="_218_dp_width">218dp</dimen>
+    <dimen name="_265_dp_height">265dp</dimen>
+
+
+
+</resources>

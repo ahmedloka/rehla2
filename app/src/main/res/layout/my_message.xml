@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:id="@+id/their"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dime_10"
+        android:layout_marginTop="@dimen/dime_10"
+        android:layout_marginBottom="@dimen/dime_10"
+        android:padding="@dimen/dime_8"
+        android:layout_marginEnd="@dimen/dime_45"
+        android:background="@drawable/their_message"
+        android:clipToPadding="false">
+
+        <!--<View
+            android:id="@+id/avatar"
+            android:layout_alignParentLeft="true"
+            android:scaleType="centerInside"
+            android:background="@drawable/circle"
+            android:layout_width="34dp"
+            android:layout_height="34dp" />-->
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatar"
+            android:layout_width="@dimen/dime_45"
+            android:layout_height="@dimen/dime_45"
+            android:layout_gravity="center"
+            />
+        <com.NativeTech.rehla.Utills.MyTextViewBold
+            android:id="@+id/name"
+            android:layout_marginStart="@dimen/dime_10"
+            android:layout_toEndOf="@+id/avatar"
+            android:layout_alignTop="@+id/avatar"
+            android:layout_width="wrap_content"
+            android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+            style="@style/tvStyleBold"
+            android:layout_height="wrap_content"
+             android:text=""/>
+
+        <com.NativeTech.rehla.Utills.MyTextView
+            android:id="@+id/message_body_their"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+            android:layout_marginBottom="@dimen/dime_8"
+            android:layout_alignStart="@+id/name"
+            android:textColor="@color/blakcolor"
+           
+            />
+        <com.NativeTech.rehla.Utills.MyTextView
+            android:id="@+id/message_body_theirdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/message_body_their"
+             android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+
+            android:layout_alignStart="@+id/name"
+            android:textColor="@color/gray_selected"
+
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/my"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/dime_10"
+        android:paddingTop="@dimen/dime_10"
+        android:paddingBottom="@dimen/dime_10"
+        android:paddingStart="@dimen/dime_45"
+        android:clipToPadding="false">
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?actionBarSize"
+            android:background="@drawable/my_message"
+            android:orientation="vertical"
+            android:gravity="end|top"
+            >
+            <com.NativeTech.rehla.Utills.MyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+                android:id="@+id/message_body_my"
+                android:textColor="@color/whitecolor"
+                android:paddingTop="@dimen/dime_10"
+                android:paddingStart="@dimen/dime_10"
+                android:layout_marginBottom="@dimen/dime_8"
+                android:paddingEnd="@dimen/dime_10"
+
+                android:text=""
+                />
+            <com.NativeTech.rehla.Utills.MyTextView
+                android:id="@+id/message_body_mydate"
+                android:layout_width="wrap_content"
+                android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/message_body_my"
+                 android:paddingStart="@dimen/dime_10"
+                android:paddingEnd="@dimen/dime_10"
+               android:layout_marginBottom="@dimen/dime_5"
+                android:layout_alignStart="@+id/message_body_my"
+                android:textColor="@color/whitecolor"
+                />
+        </android.support.v7.widget.LinearLayoutCompat>
+    </RelativeLayout>
+</LinearLayout>

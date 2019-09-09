@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whitecolor"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_color">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_weight="1"
+            app:title="@string/offer_ride"
+            app:titleTextColor="@android:color/white"
+
+            app:titleTextAppearance="@style/toolbarStyle"
+
+            android:background="@color/app_color"
+             >
+
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dime_5"
+
+        >
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <fragment
+                    android:id="@+id/place_autocomplete_fragment_src"
+                    android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <fragment
+                    android:id="@+id/place_autocomplete_fragment_dis"
+                    android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <com.NativeTech.rehla.Utills.MyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            
+                android:layout_margin="@dimen/dime_10"
+                 android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                style="@style/tvStyleBold"
+
+                android:padding="@dimen/dime_5"
+                android:textColor="@color/app_color_dark"
+                
+                android:text="@string/offer_a_ride"
+               />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:id="@+id/linearLayoutCompat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        style="@style/blabla_et_auto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10_height"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10_height"
+                            android:layout_marginBottom="@dimen/_10_height"
+                            android:layout_weight="0.2"
+                            android:gravity="center">
+
+                            <android.support.v7.widget.AppCompatImageView
+                                android:id="@+id/from_img"
+                                android:layout_width="@dimen/dime_15"
+                                android:layout_height="@dimen/dime_15"
+                                android:background="@drawable/button_shap_circle_green"
+                                android:visibility="gone" />
+
+                        </android.support.v7.widget.LinearLayoutCompat>
+
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.8"
+                            android:orientation="vertical">
+
+                            <android.support.v7.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/autocomplete_from"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10_height"
+                                    android:background="@android:color/transparent"
+                                    android:drawablePadding="@dimen/dime_5"
+                                    android:focusable="false"
+                                    android:hint="@string/set_starting_location"
+                                    android:maxLines="1"
+                                    android:padding="@dimen/_10_height"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/gray_selected"
+                                    android:textColorHint="@color/gray_unselected" />
+
+                            </android.support.v7.widget.LinearLayoutCompat>
+
+                            <View
+                                android:id="@+id/from"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/view_height"
+                                android:layout_marginTop="@dimen/_10_height"
+                                android:layout_marginBottom="@dimen/_10_height"
+                                android:layout_weight="0.6"
+                                android:background="@color/whitecolor" />
+
+
+                            <com.NativeTech.rehla.Utills.MyTextView
+                                android:id="@+id/startTime"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_10_height"
+                                android:background="@android:color/transparent"
+                                android:drawablePadding="@dimen/dime_5"
+                                android:focusable="false"
+                                android:hint="@string/starting_time"
+                                android:padding="@dimen/_10_height"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                android:textColor="@color/gray_selected"
+                                android:textColorHint="@color/gray_unselected" />
+
+                        </android.support.v7.widget.LinearLayoutCompat>
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        style="@style/blabla_et_auto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10_height"
+                        android:layout_marginEnd="@dimen/_10_height"
+                        android:layout_marginBottom="@dimen/_10_height"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10_height"
+                            android:layout_marginBottom="@dimen/_10_height"
+                            android:layout_weight="0.2"
+                            android:gravity="center">
+
+                            <android.support.v7.widget.LinearLayoutCompat
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_10_height"
+                                android:layout_marginBottom="@dimen/_10_height"
+                                android:layout_weight="0.2"
+                                android:gravity="center">
+
+                                <android.support.v7.widget.AppCompatImageView
+                                    android:id="@+id/to_img"
+                                    android:layout_width="@dimen/dime_15"
+                                    android:layout_height="@dimen/dime_15"
+                                    android:background="@drawable/button_shap_circle_orange"
+                                    android:visibility="gone" />
+
+                            </android.support.v7.widget.LinearLayoutCompat>
+
+                        </android.support.v7.widget.LinearLayoutCompat>
+
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.8"
+                            android:orientation="vertical">
+
+                            <android.support.v7.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/autocomplete_to"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dime_10"
+                                    style="@style/etStyle"
+                                    android:background="@android:color/transparent"
+                                     android:focusable="false"
+                                    android:hint="@string/set_end_location"
+                                    android:maxLines="1"
+                                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/gray_selected"
+                                    android:textColorHint="@color/gray_unselected" />
+                            </android.support.v7.widget.LinearLayoutCompat>
+
+                            <View
+                                android:id="@+id/to"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/view_height"
+                                android:layout_marginTop="@dimen/_10_height"
+                                android:layout_marginBottom="@dimen/_10_height"
+                                android:layout_weight="0.6"
+                                android:background="@color/whitecolor" />
+
+                            <com.NativeTech.rehla.Utills.MyTextView
+                                android:id="@+id/endTime"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/etStyle"
+                                android:layout_marginBottom="@dimen/dime_10"
+                                android:background="@android:color/transparent"
+                                 android:focusable="false"
+                                android:hint="@string/reaching_time"
+                                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                android:textColor="@color/gray_selected"
+                                android:textColorHint="@color/gray_unselected" />
+
+                        </android.support.v7.widget.LinearLayoutCompat>
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+                </android.support.v7.widget.LinearLayoutCompat>
+
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.55"
+                    app:layout_constraintHorizontal_bias="0.08"
+                    app:layout_constraintStart_toStartOf="@+id/linearLayoutCompat"
+                    app:layout_constraintTop_toTopOf="@+id/linearLayoutCompat"
+                    app:layout_constraintVertical_bias="0.24000001">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="@dimen/dime_15"
+                        android:layout_height="@dimen/dime_15"
+                        android:background="@drawable/button_shap_circle_green" />
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="@dimen/view_height"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.6"
+                        android:background="@color/blakcolor" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="@dimen/dime_15"
+                        android:layout_height="@dimen/dime_15"
+                        android:background="@drawable/button_shap_circle_orange" />
+                </android.support.v7.widget.LinearLayoutCompat>
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                style="@style/etStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dime_10"
+                android:layout_marginEnd="@dimen/dime_10"
+                android:weightSum="1">
+
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.2"
+                        android:gravity="center"
+
+                        >
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/dime_26"
+                            android:layout_height="@dimen/dime_26"
+                            android:layout_gravity="center_vertical"
+                            app:srcCompat="@drawable/ic_calendar" />
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8">
+
+                        <com.NativeTech.rehla.Utills.MyTextView
+                            android:id="@+id/date"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                             android:gravity="center_vertical"
+                            android:inputType="date"
+                            android:text="@string/date"
+                             android:textColor="@color/gray_unselected"
+                            android:textSize="@dimen/_12ssp" />
+                    </android.support.v7.widget.LinearLayoutCompat>
+                </android.support.v7.widget.LinearLayoutCompat>
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10_height"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                   android:padding="@dimen/dime_5"
+                    android:layout_marginTop="@dimen/dime_10"
+                    android:weightSum="1">
+
+                    <com.NativeTech.rehla.Utills.MyTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.70"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                         android:text="@string/expected_distance"
+                        android:textAllCaps="false"
+                        android:textColor="@color/app_color_dark"
+                        />
+
+                    <com.NativeTech.rehla.Utills.MyTextViewBold
+                        android:id="@+id/distanceValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        style="@style/tvStyleBold"
+                        android:gravity="center"
+                        android:text="@string/_0"
+                        android:ems="3"
+                        android:textAllCaps="false"
+                        android:textColor="@color/app_color_dark"
+                       />
+
+                    <com.NativeTech.rehla.Utills.MyTextViewBold
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        style="@style/tvStyleBold"
+                        android:layout_weight="0.15"
+                        android:padding="@dimen/dime_5"
+                        android:text="@string/km"
+                        android:textAllCaps="false"
+                        android:textColor="@color/app_color_dark"
+                        />
+                </android.support.v7.widget.LinearLayoutCompat>
+
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dime_5"
+                   
+                    android:weightSum="1">
+
+                    <com.NativeTech.rehla.Utills.MyTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.70"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                          android:text="@string/expected_price"
+                        android:textAllCaps="false"
+                        android:textColor="@color/app_color_dark"
+                        />
+
+                    <com.NativeTech.rehla.Utills.MyTextViewBold
+                        android:id="@+id/priceValue"
+                        android:layout_width="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        style="@style/tvStyleBold"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:gravity="center"
+                        android:ems="3"
+                        android:text="@string/_0"
+                        android:textAllCaps="false"
+                        android:textColor="@color/app_color_dark"
+                        />
+
+                    <com.NativeTech.rehla.Utills.MyTextViewBold
+                        android:layout_width="0dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        style="@style/tvStyleBold"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.15"
+                        android:text="@string/sar"
+                        android:textAllCaps="false"
+                        android:textColor="@color/app_color_dark"  />
+                </android.support.v7.widget.LinearLayoutCompat>
+
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dime_10"
+
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dime_5"
+                 
+                    android:weightSum="1">
+
+                    <com.NativeTech.rehla.Utills.MyTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                          android:text="@string/set_price_for_seat"
+                        android:textAllCaps="false"
+                        android:textColor="@color/app_color_dark"
+                       />
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:id="@+id/minus_seat_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.1"
+                        android:gravity="center">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/dime_26"
+                             android:layout_height="@dimen/dime_26"
+                            app:srcCompat="@drawable/ic_minus" />
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.225"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.NativeTech.rehla.Utills.MyTextViewBold
+                            android:id="@+id/price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            style="@style/tvStyleBold"
+                            android:inputType="number"
+                            android:paddingStart="@dimen/dime_5"
+                            android:paddingEnd="@dimen/dime_5"
+                            android:text="@string/_0"
+                            android:textAllCaps="false"
+                            android:textColor="@color/app_color_dark"
+                         />
+
+                        <com.NativeTech.rehla.Utills.MyTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            style="@style/tvStyleBold"
+                            android:paddingStart="@dimen/dime_5"
+                            android:paddingEnd="@dimen/dime_5"
+                            android:text="@string/sar"
+                            android:textAllCaps="false"
+                            android:textColor="@color/app_color_dark"
+                            />
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:id="@+id/plus_seat_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.075"
+                        android:gravity="center">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/dime_26"
+                            android:layout_height="@dimen/dime_26"
+
+                            app:srcCompat="@drawable/ic_plus" />
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                </android.support.v7.widget.LinearLayoutCompat>
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dime_5"
+                    android:weightSum="1">
+
+                    <com.NativeTech.rehla.Utills.MyTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:text="@string/set_number_of_seat"
+                        android:textAllCaps="false"
+                        android:textColor="@color/app_color_dark"
+                        />
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:id="@+id/minus_seat_num"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.1"
+                        android:gravity="center">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/dime_26"
+
+                            android:layout_height="@dimen/dime_26"
+                            app:srcCompat="@drawable/ic_minus" />
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                    <com.NativeTech.rehla.Utills.MyTextViewBold
+                        android:id="@+id/seat_num"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.225"
+                        android:gravity="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        style="@style/tvStyleBold"
+                        android:inputType="number"
+                        android:text="@string/_0"
+                        android:textAllCaps="false"
+                        android:textColor="@color/app_color_dark"
+                        />
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:id="@+id/plus_seat_num"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.075"
+                        android:gravity="center">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/dime_26"
+                            android:layout_height="@dimen/dime_26"
+
+                            app:srcCompat="@drawable/ic_plus" />
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                </android.support.v7.widget.LinearLayoutCompat>
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dime_15"
+                    android:layout_marginBottom="@dimen/dime_10"
+                    android:paddingStart="@dimen/dime_5"
+                    android:paddingEnd="@dimen/dime_5"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                      android:weightSum="1">
+
+                    <com.NativeTech.rehla.Utills.MyTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                          android:text="@string/select_car"
+                        android:textAllCaps="false"
+                        android:textColor="@color/app_color_dark"
+                        />
+
+                    <com.NativeTech.rehla.Utills.MyTextViewBold
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                         android:text=""
+                        android:textAllCaps="false"
+                        android:textColor="@color/app_color_dark"
+                        />
+
+                    <com.NativeTech.rehla.Utills.MyTextView
+                        android:id="@+id/selectCar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                         android:background="@drawable/button_shape_small_border_gray"
+                        android:gravity="center"
+                        android:padding="@dimen/dime_8"
+                        android:text=""
+                        android:textAllCaps="false"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/gray_selected"
+                      />
+                </android.support.v7.widget.LinearLayoutCompat>
+
+
+
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:id="@+id/back_seat_lin"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/dime_5"
+
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dime_5"
+
+                    android:weightSum="1">
+
+                    <com.NativeTech.rehla.Utills.MyTextView
+                        android:layout_width="0dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.925"
+                         android:text="@string/two_passengers_in_the_back_seat"
+                        android:textAllCaps="false"
+                        android:textColor="@color/app_color_dark"
+                       />
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.075"
+                        android:gravity="center">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/back_seat"
+                            android:layout_width="@dimen/dime_26"
+                            android:layout_height="@dimen/dime_26"
+
+                            android:src="@drawable/button_shape_border_gray" />
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                </android.support.v7.widget.LinearLayoutCompat>
+
+                <com.NativeTech.rehla.Utills.MyEditText
+                    android:id="@+id/desc"
+                    style="@style/etStyle"
+ 
+                    android:layout_width="match_parent"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:includeFontPadding="false"
+                      android:lineSpacingMultiplier="0.9"
+                    android:lineSpacingExtra="0dp"
+                    android:layout_height="@dimen/dime_175"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dime_20"
+                    android:gravity="start"
+                    android:inputType="textMultiLine"
+                    android:text="@string/write_some_detail_about_your_ride"
+                    android:textColorHint="@color/gray_unselected"
+                    />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <com.NativeTech.rehla.Utills.ButtonBold
+                android:id="@+id/offer_ride"
+                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+                android:layout_marginTop="@dimen/dime_15"
+                android:layout_marginBottom="@dimen/dime_15"
+                android:background="@drawable/ride_status_green_2"
+                android:gravity="center"
+                android:minWidth="@dimen/dime_175"
+                android:text="@string/create"
+                android:textAllCaps="false"
+                android:textColor="@color/whitecolor"
+                />
+
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+</android.support.v7.widget.LinearLayoutCompat>

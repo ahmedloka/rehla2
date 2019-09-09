@@ -1,0 +1,58 @@
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:background="@color/tab_background"
+    >
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_color"
+        >
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_weight="1"
+            android:background="@color/app_color"
+            app:titleTextAppearance="@style/toolbarStyle"
+            app:titleTextColor="@color/whitecolor"
+            >
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+        </android.support.v7.widget.RecyclerView>
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.NativeTech.rehla.Utills.MyTextView
+                android:id="@+id/no_exist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_4_height"
+                android:text="@string/no_messages"
+                android:textSize="@dimen/_14ssp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/blakcolor"
+                android:drawablePadding="@dimen/margin_txt"
+                android:layout_margin="@dimen/_10_height"
+                />
+        </android.support.v7.widget.LinearLayoutCompat>
+    </FrameLayout>
+
+
+</android.support.v7.widget.LinearLayoutCompat>

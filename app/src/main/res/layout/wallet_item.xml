@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/whitecolor"
+    android:layout_marginTop="@dimen/_4_height"
+    android:padding="@dimen/_4_height"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_4_height"
+        android:orientation="horizontal"
+        >
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_4_height"
+            >
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img"
+                android:layout_width="@dimen/profile_image_size"
+                android:layout_height="@dimen/profile_image_size"
+                android:layout_gravity="center"
+                />
+        </android.support.v7.widget.LinearLayoutCompat>
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="1"
+            >
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/_10_height"
+                android:gravity="center"
+                >
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/_4_height"
+                    android:orientation="horizontal"
+
+                    >
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.75"
+                        android:orientation="horizontal"
+                        >
+                        <com.NativeTech.rehla.Utills.MyTextViewBold
+                            android:id="@+id/name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Paid For A Ride"
+                            android:paddingStart="@dimen/_4_height"
+                            android:paddingEnd="@dimen/_4_height"
+                            android:layout_gravity="center"
+                            android:textAllCaps="false"
+                            android:textColor="@color/blakcolor"
+                            android:textSize="@dimen/tab_text_size"
+                            />
+
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="end"
+                        android:gravity="end"
+                        android:weightSum="1"
+                        >
+                        <com.NativeTech.rehla.Utills.MyTextViewBold
+                            android:id="@+id/price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="120"
+                            android:gravity="end"
+                            android:layout_gravity="end"
+                            android:textStyle="bold"
+                            android:paddingStart="@dimen/margin_txt"
+                            android:paddingEnd="@dimen/margin_txt"
+                            android:textAllCaps="false"
+                            android:textColor="@color/app_color"
+                            android:textSize="@dimen/forgot_txt_size"
+                            />
+                        <com.NativeTech.rehla.Utills.MyTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sar"
+                            android:layout_gravity="end"
+                            android:gravity="end"
+                            android:paddingStart="@dimen/margin_txt"
+                            android:paddingEnd="@dimen/margin_txt"
+                            android:textAllCaps="false"
+                            android:textColor="@color/app_color"
+                            android:textSize="@dimen/forgot_txt_size"
+                            />
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                </android.support.v7.widget.LinearLayoutCompat>
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="@dimen/margin_txt"
+                    android:layout_weight="1"
+                    >
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal"
+                        >
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+
+                            >
+                            <com.NativeTech.rehla.Utills.MyTextView
+                                android:id="@+id/date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="20 Mar 2018"
+                                android:layout_gravity="top"
+                                android:textAllCaps="false"
+                                android:textColor="@color/tab_border"
+                                android:textSize="@dimen/forgot_txt_size"
+                                />
+
+                        </android.support.v7.widget.LinearLayoutCompat>
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        >
+                        <com.NativeTech.rehla.Utills.MyTextViewBold
+                            android:id="@+id/to"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="To David Johnson"
+                            android:layout_gravity="center"
+                            android:gravity="end"
+                            android:textStyle="bold"
+                            android:textAllCaps="false"
+                            android:textColor="@color/tab_border"
+                            android:textSize="@dimen/tab_text_size"
+                            />
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+                </android.support.v7.widget.LinearLayoutCompat>
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    >
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:paddingStart="@dimen/margin_txt"
+                        android:paddingEnd="@dimen/margin_txt"
+                        android:orientation="horizontal"
+                        >
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+
+                            >
+                            <com.NativeTech.rehla.Utills.MyTextView
+                                android:id="@+id/details"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Washington pearl road To Harison, East Network"
+                                android:layout_gravity="top"
+                                android:textAllCaps="false"
+                                android:textColor="@color/tab_border"
+                                android:textSize="@dimen/forgot_txt_size"
+                                />
+
+                        </android.support.v7.widget.LinearLayoutCompat>
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+                </android.support.v7.widget.LinearLayoutCompat>
+
+
+            </android.support.v7.widget.LinearLayoutCompat>
+        </android.support.v7.widget.LinearLayoutCompat>
+    </android.support.v7.widget.LinearLayoutCompat>
+</LinearLayout>

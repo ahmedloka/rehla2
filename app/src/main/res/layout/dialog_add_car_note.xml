@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg"
+    android:padding="@dimen/_4_height"
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_10_height" />
+
+    <com.NativeTech.rehla.Utills.MyTextViewBold
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/_4_height"
+        style="@style/tvStyleBold"
+        android:text="ملاحظات هامة"
+        android:textColor="@color/blakcolor"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_4_height" />
+
+    <com.NativeTech.rehla.Utills.MyTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/_4_height"
+        android:text="حسب اشتراطات هيئة النقل"
+        android:textColor="@color/blakcolor"
+        android:textSize="@dimen/_9ssp"
+        android:textStyle="bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_4_height" />
+
+
+    <com.NativeTech.rehla.Utills.MyTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/_4_height"
+        android:text="شروط التسجيل ككابتن:
+مقتصر على السعوديين فقط مع ضرورة رفع صورة شخصية - أستمارة السيارة - الرخصة - التأمين - بطاقة الأحوال ويكون العمر من ٢٠ - ٦٥ سنة
+"
+
+        android:textColor="@color/blakcolor"
+        android:textSize="@dimen/_9ssp"
+        android:textStyle="bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_10_height" />
+
+
+    <com.NativeTech.rehla.Utills.MyTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/_4_height"
+        android:text="وشروط تسجيل السيارة :
+تكون موديل 2015 او احدث وبأسم الكابتن أو مفوض عليها وجود الفحص الدوري  ."
+        android:textColor="@color/blakcolor"
+        android:textSize="@dimen/_9ssp"
+        android:textStyle="bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_10_height" />
+
+
+    <com.NativeTech.rehla.Utills.MyTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/_4_height"
+        android:text="ولمزيد من المعلومات الرجاء زيارة الاسئلة المتكررة."
+        android:textColor="@color/blakcolor"
+        android:textSize="@dimen/_9ssp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_height"
+        android:background="@color/tab_border" />
+
+    <com.NativeTech.rehla.Utills.ButtonBold
+        android:id="@+id/ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_4_height"
+        android:background="@color/whitecolor"
+        android:padding="@dimen/_4_height"
+        android:text="موافق"
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="@color/labanycolor"
+        android:textSize="@dimen/_13ssp" />
+</android.support.v7.widget.LinearLayoutCompat>

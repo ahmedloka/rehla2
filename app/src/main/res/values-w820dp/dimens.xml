@@ -1,0 +1,23 @@
+<resources>
+    <dimen name="nav_header_height">630dp</dimen>
+    <dimen name="dime_8">21dp</dimen>
+    <dimen name="dime_3">8dp</dimen>
+    <dimen name="dime_38">99dp</dimen>
+    <dimen name="dime_10">26dp</dimen>
+    <dimen name="dime_20">53dp</dimen>
+    <dimen name="dime_90">235dp</dimen>
+    <dimen name="dime_5">14dp</dimen>
+    <dimen name="dime_80">210dp</dimen>
+    <dimen name="dime_118">309dp</dimen>
+    <dimen name="dime_26">70dp</dimen>
+
+    <dimen name="dime_70">183dp</dimen>
+    <dimen name="appbar_padding_top">21dp</dimen>
+    <dimen name="dime_175">448dp</dimen>
+    <dimen name="dime_45">119dp</dimen>
+    <dimen name="dime_15">40dp</dimen>
+    <dimen name="dime_100">261dp</dimen>
+    <dimen name="dime_200">322dp</dimen>
+    <dimen name="dime_87" >340dp</dimen>
+    <dimen name="dime_55" >145dp</dimen>
+</resources>

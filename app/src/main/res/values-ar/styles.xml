@@ -1,0 +1,115 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/app_color</item>
+        <item name="colorPrimaryDark">@color/app_color_dark</item>
+        <item name="colorAccent">@color/app_color</item>
+        <item name="android:fontFamily">@font/cairo_reg</item>
+    </style>
+    <style name="AppTheme1" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/app_color</item>
+        <item name="colorPrimaryDark">@color/app_color_dark</item>
+        <item name="colorAccent">@color/app_color</item>
+        <item name="android:fontFamily">@font/montserra</item>
+
+    </style>
+    <style name="tvStyleBold">
+        <item name="android:fontFamily">@font/cairo_bold</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="MyCustomTabText" parent="Base.Widget.Design.TabLayout">
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:textColor">@color/textcolor</item>
+        <item name="android:fontFamily">@font/cairo_reg</item>
+
+
+    </style>
+
+    <style name="MyCustomTabText2" parent="Base.TextAppearance.AppCompat.Small">
+         <item name="android:textColor">@color/whitecolor</item>
+        <item name="android:fontFamily">@font/cairo_bold</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+
+    <style name="MyDatePickerStyle">
+        <item name="android:calendarViewShown">false</item>
+
+    </style>
+
+    <style name="MyDatePickerSpinnerStyle" >
+        <item name="android:calendarViewShown">false</item>
+        <item name="colorControlNormal">#d50000</item>
+        <item name="android:theme">@style/MyDatePickerSpinnerStyle</item>
+
+    </style>
+
+
+    <style name="blabla_et">
+        <item name="android:background">@drawable/editext_bg</item>
+        <item name="android:textColor">@color/blakcolor</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textColorHint">@color/gray_selected</item>
+        <item name="android:drawablePadding">@dimen/_4_height</item>
+        <item name="android:padding">@dimen/_10ssp</item>
+        <item name="android:fontFamily">@font/cairo_reg</item>
+
+    </style>
+
+    <style name="blabla_et_offer">
+        <item name="android:background">@drawable/editext_bg</item>
+        <item name="android:textColor">@color/gray_unselected</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textColorHint">@color/gray_unselected</item>
+        <item name="android:drawablePadding">@dimen/_4_height</item>
+        <item name="android:padding">@dimen/_10ssp</item>
+        <item name="android:fontFamily">@font/cairo_reg</item>
+
+
+    </style>
+    <style name="blabla_et_upload">
+        <item name="android:background">@drawable/editext_bg</item>
+        <item name="android:textColor">@color/blakcolor</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:drawablePadding">@dimen/_4_height</item>
+        <item name="android:fontFamily">@font/cairo_reg</item>
+
+
+    </style>
+    <style name="blabla_et_auto">
+        <item name="android:background">@drawable/editext_bg</item>
+        <item name="android:textColor">@color/blakcolor</item>
+        <item name="android:fontFamily">@font/cairo_reg</item>
+
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:drawablePadding">@dimen/_4_height</item>
+
+
+    </style>
+
+    <style name="etStyle">
+        <item name="android:background">@drawable/editext_bg</item>
+        <item name="android:textColor">@color/gray_selected</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>
+        <item name="android:textColorHint">@color/gray_unselected</item>
+        <item name="android:drawablePadding">@dimen/dime_10</item>
+        <item name="android:paddingTop">@dimen/dime_15</item>
+        <item name="android:paddingBottom">@dimen/dime_15</item>
+        <item name="android:paddingStart">@dimen/dime_15</item>
+        <item name="android:fontFamily">@font/cairo_reg</item>
+       <item name="android:textStyle">normal</item>
+        <item name="android:paddingEnd">@dimen/dime_15</item>
+        <item name="android:minHeight">@dimen/dime_45</item>
+
+    </style>
+    <style name="toolbarStyle">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Caption</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/cairo_bold</item>
+
+    </style>
+
+</resources>

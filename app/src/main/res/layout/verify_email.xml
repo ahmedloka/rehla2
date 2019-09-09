@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/_10_height"
+    android:layout_gravity="center"
+    >
+
+    <com.NativeTech.rehla.Utills.MyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10_height"
+        android:text="@string/check_your_email_to_complete_verification"
+        android:textColor="@color/blakcolor"
+        android:textSize="@dimen/_12ssp"
+        android:visibility="visible"
+        android:layout_margin="@dimen/_10_height"
+        />
+
+    <com.NativeTech.rehla.Utills.MyEditText
+        android:id="@+id/code"
+        style="@style/blabla_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_code"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/gray_unselected"
+        android:layout_margin="@dimen/_10_height"
+        />
+    <com.NativeTech.rehla.Utills.ButtonBold
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45_height"
+        android:textAllCaps="false"
+        android:layout_margin="@dimen/_10_height"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textSize="@dimen/_14ssp"
+        android:textColor="@color/whitecolor"
+        style="?android:attr/borderlessButtonStyle"
+        android:text="@string/ok"
+        android:background="@drawable/ride_status_green_2"
+        />
+    <com.NativeTech.rehla.Utills.ButtonBold
+        android:id="@+id/cancel"
+        android:layout_width="match_parent"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_height="@dimen/_45_height"
+        android:textAllCaps="false"
+        android:layout_margin="@dimen/_10_height"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textSize="@dimen/_14ssp"
+        android:textColor="@color/whitecolor"
+        android:text="@string/cancel"
+        android:background="@drawable/ride_status_red2"
+        />
+
+</LinearLayout>

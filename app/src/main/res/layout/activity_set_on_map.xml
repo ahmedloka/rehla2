@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <!-- <com.google.android.gms.maps.MapView
+         android:id="@+id/mapView"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent" />-->
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <!--<LinearLayout
+        android:id="@+id/locationMarker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/margin"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <nativeTechh.rehla.Utills.MyTextView
+            android:id="@+id/locationMarkertext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@color/whitecolor"
+            android:padding="@dimen/margin_txt"
+            style="@style/blabla_et"
+            android:text="@string/click_ok"
+            android:textSize="@dimen/grid_txt_size"
+            android:textColor="@android:color/background_dark" />
+
+        <ImageView
+            android:id="@+id/imageMarker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/current" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/doneMarker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin"
+        android:paddingStart="@dimen/margin_R_L"
+        android:paddingEnd="@dimen/margin_R_L"
+        android:background="@drawable/button_white"
+        android:text="@string/ok"
+        android:textSize="@dimen/grid_txt_size"
+        android:layout_gravity="bottom|center"
+        android:textStyle="bold"
+        android:textColor="@color/app_color"/>-->
+
+</FrameLayout>

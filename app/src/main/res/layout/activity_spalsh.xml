@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/splash"
+            />
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blakcolor"
+            android:alpha="0.2"
+            >
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1"
+            >
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.15"
+                android:layout_marginBottom="@dimen/dime_38"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+                <com.NativeTech.rehla.Utills.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+
+                    android:text="@string/developed_by"
+                    android:layout_gravity="center"
+                    android:paddingStart="@dimen/dime_5"
+                    android:paddingEnd="@dimen/dime_5"
+                    android:textAllCaps="false"
+                    android:gravity="center"
+                    android:textColor="@color/whitecolor"
+                     />
+
+                <com.NativeTech.rehla.Utills.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/native_tech"
+                    android:layout_gravity="center"
+                    android:paddingStart="@dimen/dime_5"
+                    android:paddingEnd="@dimen/dime_5"
+                    android:textAllCaps="false"
+                    android:gravity="center"
+                    android:textColor="@color/app_color"
+                    android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+                    />
+            </android.support.v7.widget.LinearLayoutCompat>
+        </android.support.v7.widget.LinearLayoutCompat>
+
+
+    </FrameLayout>
+
+</android.support.v7.widget.LinearLayoutCompat>

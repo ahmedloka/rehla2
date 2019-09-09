@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/whitecolor"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/whitecolor"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dime_200"
+                    android:layout_gravity="center"
+                     android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_login"  />
+
+
+
+            <com.NativeTech.rehla.Utills.MyEditText
+                android:id="@+id/email"
+                style="@style/etStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dime_20"
+                 android:layout_marginTop="@dimen/dime_45"
+                android:layout_marginEnd="@dimen/dime_20"
+                 android:drawableStart="@drawable/ic_email"
+                 android:hint="@string/email_or_mobile_number"
+                android:inputType="textEmailAddress"
+                android:gravity="center_vertical"
+
+               />
+
+            <com.NativeTech.rehla.Utills.MyEditText
+                android:id="@+id/password"
+                style="@style/etStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dime_20"
+                android:layout_marginTop="@dimen/dime_26"
+                android:layout_marginEnd="@dimen/dime_20"
+                android:drawableStart="@drawable/ic_locked"
+                android:hint="@string/password"
+                android:layout_marginBottom="@dimen/dime_15"
+                android:inputType="textPassword"
+                android:textAlignment="viewStart"
+              />
+
+            <com.NativeTech.rehla.Utills.ButtonBold
+                android:id="@+id/login"
+                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/dime_20"
+                android:background="@drawable/ride_status_green_2"
+                android:gravity="center"
+                android:padding="@dimen/dime_8"
+                android:minHeight="@dimen/dime_45"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:text="@string/login"
+                android:textAllCaps="false"
+                android:textColor="@color/whitecolor"
+                 />
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dime_20"
+                android:layout_marginEnd="@dimen/dime_20"
+                  android:orientation="horizontal">
+
+                <com.NativeTech.rehla.Utills.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                     android:text="@string/new_user"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textColor="@color/gray_selected"
+                   />
+
+                <com.NativeTech.rehla.Utills.MyTextViewBold
+                    android:id="@+id/signup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                     android:text="@string/sign_up"
+                    android:textAllCaps="false"
+                    style="@style/tvStyleBold"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_marginStart="@dimen/dime_5"
+                    android:textColor="@color/app_color_dark"
+                    />
+
+                <com.NativeTech.rehla.Utills.MyTextViewBold
+                    android:id="@+id/forgetPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    android:padding="@dimen/_4_height"
+                    style="@style/tvStyleBold"
+                    android:text="@string/forget_password"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+
+                    android:textColor="@color/app_color_dark"
+                   />
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+
+        </android.support.v7.widget.LinearLayoutCompat>
+    </android.support.v7.widget.LinearLayoutCompat>
+</ScrollView>

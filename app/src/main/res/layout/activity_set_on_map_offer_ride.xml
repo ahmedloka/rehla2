@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:name="com.NativeTech.rehla.activities.SetOnMapOfferRide"
+        />
+    <LinearLayout
+        android:id="@+id/locationMarker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/_10_height"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <com.NativeTech.rehla.Utills.MyTextView
+            android:id="@+id/locationMarkertextAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@color/whitecolor"
+            android:padding="@dimen/_4_height"
+            style="@style/blabla_et"
+            android:text="@string/click_ok"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@android:color/background_dark"
+            />
+
+        <ImageView
+            android:id="@+id/imageMarker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/current"
+            android:tint="@color/app_color"
+            android:backgroundTint="@color/app_color"
+            />
+    </LinearLayout>
+    <com.NativeTech.rehla.Utills.ButtonBold
+        android:id="@+id/doneMarker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10_height"
+        android:background="@drawable/ride_status_green_2"
+        android:text="@string/ok"
+        android:textSize="@dimen/_12ssp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_gravity="bottom|center"
+        android:textStyle="bold"
+        android:textColor="@color/whitecolor"
+        />
+
+</FrameLayout>

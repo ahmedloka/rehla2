@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.NativeTech.rehla">
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_logo_notification"
+        android:label="@string/app_name"
+        android:name=".App"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_logo_notification_round"
+        android:theme="@style/AppTheme">
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity android:name="com.NativeTech.rehla.activities.TripDetail" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:screenOrientation="sensorPortrait" android:launchMode="singleTop" android:name="com.NativeTech.rehla.activities.CalendarActivity" />
+        <activity android:screenOrientation="sensorPortrait"
+            android:launchMode="singleTop"
+            android:name="com.NativeTech.rehla.activities.ViewOnMap" />
+        <activity android:screenOrientation="sensorPortrait"
+            android:launchMode="singleTop"
+            android:name="com.NativeTech.rehla.activities.Login"
+            android:theme="@style/AppTheme1"
+
+            />
+        <activity android:screenOrientation="sensorPortrait"
+            android:launchMode="singleTop"
+            android:name="com.NativeTech.rehla.activities.ChatDetails" />
+        <activity android:screenOrientation="sensorPortrait"
+            android:launchMode="singleTop"
+            android:name="com.NativeTech.rehla.activities.AllChats" />
+        <activity  android:screenOrientation="sensorPortrait"
+            android:windowSoftInputMode="adjustResize"
+            android:launchMode="singleTop"
+             android:name="com.NativeTech.rehla.activities.SendToBank" />
+        <activity android:screenOrientation="sensorPortrait"
+            android:launchMode="singleTop"
+            android:name="com.NativeTech.rehla.activities.RateAPassenger" />
+        <activity android:screenOrientation="sensorPortrait"
+            android:launchMode="singleTop"
+            android:name="com.NativeTech.rehla.activities.RateADriver" />
+        <activity android:screenOrientation="sensorPortrait"
+            android:launchMode="singleTop"
+            android:name="com.NativeTech.rehla.activities.Verification" />
+        <activity android:screenOrientation="sensorPortrait"
+            android:launchMode="singleTop"
+            android:name="com.NativeTech.rehla.activities.PassengerDetails" />
+        <activity android:screenOrientation="sensorPortrait"
+            android:launchMode="singleTop"
+            android:name="com.NativeTech.rehla.activities.CaptinHistoryRequests" />
+        <activity android:screenOrientation="sensorPortrait"
+            android:launchMode="singleTop"
+            android:name="com.NativeTech.rehla.activities.AcceptOrRejectTrip" />
+
+        <service android:name="com.NativeTech.rehla.services.MyService" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="0aaba605ea63b0caa4b3f771c7b294260dab99aa" />
+
+        <service android:name="com.NativeTech.rehla.services.MyFireBaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.NativeTech.rehla.services.SignalRService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name="com.NativeTech.rehla.activities.SetOnMapOfferRide"
+            android:screenOrientation="sensorPortrait"
+            />
+        <activity android:name="com.NativeTech.rehla.activities.FAQ"
+            android:screenOrientation="sensorPortrait"
+            />
+        <activity android:name="com.NativeTech.rehla.activities.Settings"
+            android:screenOrientation="sensorPortrait"
+            />
+        <activity android:name="com.NativeTech.rehla.activities.TermsAndCondition"
+            android:screenOrientation="sensorPortrait"
+            />
+        <activity  android:screenOrientation="sensorPortrait"
+            android:name="com.NativeTech.rehla.activities.Spalsh">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity  android:screenOrientation="sensorPortrait"
+            android:launchMode="singleTop"
+            android:name="com.NativeTech.rehla.activities.Signup" />
+        <activity  android:screenOrientation="sensorPortrait"
+            android:name="com.NativeTech.rehla.activities.VerificationCodeRegister" />
+        <activity
+            android:name="com.NativeTech.rehla.activities.Home"
+            android:screenOrientation="sensorPortrait"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="HomeKey" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity  android:screenOrientation="sensorPortrait" android:launchMode="singleTop" android:name="com.NativeTech.rehla.activities.Profile" />
+        <activity  android:screenOrientation="sensorPortrait" android:launchMode="singleTop" android:name="com.NativeTech.rehla.activities.FindRide" />
+        <activity  android:screenOrientation="sensorPortrait"  android:launchMode="singleTop" android:name="com.NativeTech.rehla.activities.OfferRide" />
+        <activity  android:screenOrientation="sensorPortrait" android:launchMode="singleTop" android:name="com.NativeTech.rehla.activities.SearchResult" />
+        <activity  android:screenOrientation="sensorPortrait" android:launchMode="singleTop" android:name="com.NativeTech.rehla.activities.TripDetails" />
+        <activity  android:screenOrientation="sensorPortrait" android:launchMode="singleTop" android:name="com.NativeTech.rehla.activities.Notifications" />
+        <activity  android:screenOrientation="sensorPortrait" android:launchMode="singleTop" android:name="com.NativeTech.rehla.activities.CallUs" />
+        <activity  android:screenOrientation="sensorPortrait" android:launchMode="singleTop" android:name="com.NativeTech.rehla.activities.ChangePassword" />
+        <activity
+            android:screenOrientation="sensorPortrait"
+            android:name="com.NativeTech.rehla.activities.Cars"
+            android:launchMode="singleTop" />
+        <activity  android:screenOrientation="sensorPortrait" android:launchMode="singleTop" android:name="com.NativeTech.rehla.activities.Preference" />
+        <activity  android:screenOrientation="sensorPortrait" android:launchMode="singleTop" android:name="com.NativeTech.rehla.activities.Wallet" />
+        <activity  android:screenOrientation="sensorPortrait" android:launchMode="singleTop" android:name="com.NativeTech.rehla.activities.EditProfile" />
+        <activity  android:screenOrientation="sensorPortrait" android:launchMode="singleTop"  android:name="com.NativeTech.rehla.activities.UploadLicence" />
+        <activity  android:screenOrientation="sensorPortrait" android:launchMode="singleTop" android:name="com.NativeTech.rehla.activities.RechargeWallet" />
+        <activity  android:screenOrientation="sensorPortrait" android:launchMode="singleTop" android:name="com.NativeTech.rehla.activities.UploadCarPhoto" />
+        <activity  android:screenOrientation="sensorPortrait" android:launchMode="singleTop" android:name="com.NativeTech.rehla.activities.Reviews" />
+        <activity  android:screenOrientation="sensorPortrait" android:launchMode="singleTop" android:name="com.NativeTech.rehla.activities.WaitingTrips" />
+        <activity  android:screenOrientation="sensorPortrait" android:launchMode="singleTop" android:name="com.NativeTech.rehla.activities.DriverDetails" />
+    </application>
+
+</manifest>

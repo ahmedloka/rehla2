@@ -1,0 +1,19 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/autocomplete"
+        android:textColor="@color/blakcolor"
+        android:textColorHint="@color/blakcolor"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/_10_height"
+        android:hint="@string/your_location"
+        />
+
+</LinearLayout>

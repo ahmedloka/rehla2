@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/_10_height"
+    android:layout_gravity="center"
+    >
+
+    <com.NativeTech.rehla.Utills.MyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10_height"
+        android:text="@string/enter_your_phone_number_and_a_temporary_password_will_be_sended_to_your_phone"
+        android:textColor="@color/blakcolor"
+        android:textSize="@dimen/_12ssp"
+        android:visibility="visible"
+        android:layout_margin="@dimen/_10_height"
+        />
+
+    <com.NativeTech.rehla.Utills.MyEditText
+        android:id="@+id/phone"
+        style="@style/blabla_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/phone"
+        android:visibility="visible"
+        android:inputType="phone"
+        android:textColorHint="@color/gray_unselected"
+        android:layout_margin="@dimen/_10_height"
+        />
+    <com.NativeTech.rehla.Utills.ButtonBold
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45_height"
+        android:textAllCaps="false"
+        android:layout_margin="@dimen/_10_height"
+        android:gravity="center"
+        android:layout_gravity="center"
+        style="?android:attr/borderlessButtonStyle"
+        android:textSize="@dimen/_14ssp"
+        android:textColor="@color/whitecolor"
+        android:text="@string/send"
+        android:background="@drawable/ride_status_green_2"
+        />
+
+</LinearLayout>

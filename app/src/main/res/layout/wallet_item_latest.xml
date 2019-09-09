@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/whitecolor"
+    android:layout_marginTop="@dimen/dime_10"
+    android:padding="@dimen/dime_10"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dime_5"
+        android:orientation="horizontal"
+
+        >
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:orientation="horizontal"
+            >
+            <com.NativeTech.rehla.Utills.MyTextViewBold
+                android:id="@+id/price"
+                style="@style/tvStyleBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0"
+                android:textAppearance="@style/TextAppearance.Compat.Notification"
+                android:paddingStart="@dimen/dime_5"
+                android:paddingEnd="@dimen/dime_5"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                android:textColor="@color/blakcolor"
+                 />
+            <com.NativeTech.rehla.Utills.MyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+
+                android:text="@string/sar"
+                android:paddingStart="@dimen/dime_5"
+                android:paddingEnd="@dimen/dime_5"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                android:textColor="@color/blakcolor"
+                 />
+
+
+        </android.support.v7.widget.LinearLayoutCompat>
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:weightSum="1"
+            >
+            <com.NativeTech.rehla.Utills.MyTextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+                android:layout_gravity="top"
+                android:textAllCaps="false"
+                android:textColor="@color/tab_border"
+                 />
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+    <com.NativeTech.rehla.Utills.MyTextView
+        android:id="@+id/details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+
+        android:layout_gravity="top"
+        android:textAllCaps="false"
+        android:textColor="@color/blakcolor"
+        android:layout_margin="@dimen/dime_5"
+         />
+</LinearLayout>

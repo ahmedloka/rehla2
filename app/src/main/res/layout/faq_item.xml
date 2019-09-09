@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/whitecolor"
+    android:layout_marginBottom="@dimen/dime_5"
+    >
+    <com.NativeTech.rehla.Utills.MyTextViewBold
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:text="hi"
+        style="@style/tvStyleBold"
+        android:textAppearance="@style/TextAppearance.Compat.Notification"
+        android:textAllCaps="false"
+        android:layout_marginStart="@dimen/dime_10"
+        android:layout_marginEnd="@dimen/dime_10"
+        android:textColor="@color/blakcolor"
+        android:padding="@dimen/dime_5"
+         />
+    <com.NativeTech.rehla.Utills.MyTextView
+        android:id="@+id/answer"
+        android:layout_width="wrap_content"
+        android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+        android:layout_height="wrap_content"
+        android:text="by"
+        android:textAllCaps="false"
+        android:padding="@dimen/dime_5"
+        android:layout_marginTop="@dimen/dime_5"
+        android:layout_marginStart="@dimen/dime_10"
+        android:layout_marginEnd="@dimen/dime_10"
+        android:textColor="@color/gray_selected"
+         />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:visibility="visible"
+        android:layout_marginTop="@dimen/dime_10"
+        android:background="@color/graycolor"
+        />
+
+</LinearLayout>

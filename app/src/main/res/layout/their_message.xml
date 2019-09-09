@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_10_height"
+    android:clipToPadding="false">
+
+    <!--<View
+        android:id="@+id/avatar"
+        android:layout_alignParentLeft="true"
+        android:scaleType="centerInside"
+        android:background="@drawable/circle"
+        android:layout_width="34dp"
+        android:layout_height="34dp" />-->
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/avatar"
+        android:layout_width="@dimen/profile_image_size"
+        android:layout_height="@dimen/profile_image_size"
+        android:layout_gravity="center"
+        />
+    <com.NativeTech.rehla.Utills.MyTextView
+        android:id="@+id/name"
+        android:layout_marginStart="@dimen/_10_height"
+        android:layout_toEndOf="@+id/avatar"
+        android:layout_alignTop="@+id/avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_4_height"
+        android:text=""/>
+
+    <com.NativeTech.rehla.Utills.MyTextView
+        android:id="@+id/message_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:padding="@dimen/_10_height"
+        android:layout_alignStart="@+id/name"
+        android:textColor="@color/blakcolor"
+        android:background="@drawable/their_message"
+        />
+</RelativeLayout>

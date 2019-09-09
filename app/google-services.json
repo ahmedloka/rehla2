@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "320345378899",
+    "firebase_url": "https://rehla-fc537.firebaseio.com",
+    "project_id": "rehla-fc537",
+    "storage_bucket": "rehla-fc537.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320345378899:android:43fad4343033b9a0",
+        "android_client_info": {
+          "package_name": "com.NativeTech.rehla"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320345378899-4teva59c05t0a82occa8jmlnr5r3k0bd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDtUDYrRcdQh-Ay7PwI-goQ82nZmN4MhQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
