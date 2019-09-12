@@ -19,23 +19,23 @@ import static com.NativeTech.rehla.Utills.Constant.BASE_URL_HTTP_Get_Address;
 
 public class NetworkUtil {
 
-    public static RetrofitInterface getRetrofit(){
-
-
-
-            return RetrofitClient.getClient().create(RetrofitInterface.class);
-
-
-
-      /*  RxJavaCallAdapterFactory rxAdapter = RxJavaCallAdapterFactory.createWithScheduler(Schedulers.io());
-
-       return new Retrofit.Builder()
-                .baseUrl(Constant.BASE_URL_HTTP)
-                .addCallAdapterFactory(rxAdapter)
-                .addConverterFactory(SimpleXmlConverterFactory.create())
-                .build().create(RetrofitInterface.class);*/
-
-    }
+//    public static RetrofitInterface getRetrofit(){
+//
+//
+//
+//            return RetrofitClient.getClient().create(RetrofitInterface.class);
+//
+//
+//
+//      /*  RxJavaCallAdapterFactory rxAdapter = RxJavaCallAdapterFactory.createWithScheduler(Schedulers.io());
+//
+//       return new Retrofit.Builder()
+//                .baseUrl(Constant.BASE_URL_HTTP)
+//                .addCallAdapterFactory(rxAdapter)
+//                .addConverterFactory(SimpleXmlConverterFactory.create())
+//                .build().create(RetrofitInterface.class);*/
+//
+//    }
     /*public static RetrofitInterface getRetrofit2(){
 
         RxJavaCallAdapterFactory rxAdapter = RxJavaCallAdapterFactory.createWithScheduler(Schedulers.io());

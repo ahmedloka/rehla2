@@ -100,7 +100,7 @@ public class TerhalUtils {
         return str;
     }
     public static void initMessages(Context context) {
-        adapter2=new RecyclerViewAdapterChatRoom(context,messageListView);
+        adapter2=new RecyclerViewAdapterChatRoom(context);
         messagesView.setHasFixedSize(true);
         LinearLayoutManager mRecyclerViewLayoutManager2 = new LinearLayoutManager(context
                 , LinearLayoutManager.VERTICAL, false);

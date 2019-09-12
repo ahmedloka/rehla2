@@ -1,6 +1,9 @@
 package com.NativeTech.rehla.activities;
 
 import android.annotation.SuppressLint;
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
+import android.arch.paging.PagedList;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -10,19 +13,32 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.NativeTech.rehla.R;
+import com.NativeTech.rehla.Utills.Constant;
+import com.NativeTech.rehla.activities.paging.ItemViewModel;
+import com.NativeTech.rehla.adapters.Message;
+import com.NativeTech.rehla.adapters.Messages;
+import com.NativeTech.rehla.adapters.RecyclerViewAdapterChatRoom;
 import com.NativeTech.rehla.model.DataManager;
+import com.NativeTech.rehla.model.data.dto.Models.Chats.ChatDetailsModel;
+import com.NativeTech.rehla.model.data.dto.Models.Chats.ChatDetailsResponse;
+import com.NativeTech.rehla.model.data.dto.Models.Chats.SendMessageModel;
+import com.NativeTech.rehla.services.SignalRService;
 import com.kaopiz.kprogresshud.KProgressHUD;
 
 import org.json.JSONObject;
@@ -34,60 +50,60 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
-import com.NativeTech.rehla.model.data.dto.Models.Chats.ChatDetailsResponse;
-import com.NativeTech.rehla.model.data.dto.Models.Chats.SendMessageModel;
-import com.NativeTech.rehla.Network.NetworkUtil;
-import com.NativeTech.rehla.R;
-import com.NativeTech.rehla.Utills.Constant;
-import com.NativeTech.rehla.Utills.Validation;
-import com.NativeTech.rehla.adapters.Message;
-import com.NativeTech.rehla.adapters.Messages;
-import com.NativeTech.rehla.adapters.RecyclerViewAdapterChatRoom;
-import com.NativeTech.rehla.services.SignalRService;
 import retrofit2.HttpException;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
 
 import static com.NativeTech.rehla.Utills.Constant.PartnerIdentityId;
 import static com.NativeTech.rehla.Utills.Constant.ReciverId;
 import static com.NativeTech.rehla.Utills.Constant.ReciverName;
 import static com.NativeTech.rehla.Utills.Constant.ReciverPhoto;
-import static com.NativeTech.rehla.Utills.Constant.buildDialog;
 
 public class ChatDetails extends AppCompatActivity {
 
-    private AppCompatEditText editText;
-
-    private SharedPreferences mSharedPreferences;
-    private String token;
-    private KProgressHUD hud;
-
     @SuppressLint("StaticFieldLeak")
     public static RecyclerView messagesView;
-    private static Message message;
     @SuppressLint("StaticFieldLeak")
     //public static MessageAdapter adapter2;
     public static RecyclerViewAdapterChatRoom adapter2;
     public static List<Message> messageListView;
-
+    public static ProgressBar progressBar;
+    private static Message message;
+    private final Context mContext = this;
+    Messages messages = new Messages();
+    private AppCompatEditText editText;
+    private SharedPreferences mSharedPreferences;
+    private String token;
+    private KProgressHUD hud;
     private String ID = "";
     private String name = "";
-
-
-    Messages messages = new Messages();
-
+    private ItemViewModel itemViewModel;
     private TextView no_exist;
-
-    private final Context mContext = this;
     private SignalRService mService;
     private boolean mBound = false;
+    /**
+     * Defines callbacks for service binding, passed to bindService()
+     */
+    private final ServiceConnection mConnection = new ServiceConnection() {
 
+        @Override
+        public void onServiceConnected(ComponentName className,
+                                       IBinder service) {
+            // We've bound to SignalRService, cast the IBinder and get SignalRService instance
+            SignalRService.LocalBinder binder = (SignalRService.LocalBinder) service;
+            mService = binder.getService();
+            // Toast.makeText(mContext, "onServiceConnected", Toast.LENGTH_SHORT).show();
+            mBound = true;
+        }
 
+        @Override
+        public void onServiceDisconnected(ComponentName arg0) {
+            // Toast.makeText(mContext, "Disconnected", Toast.LENGTH_SHORT).show();
+            mBound = false;
+        }
+    };
     private String Language;
     private CompositeSubscription mSubscriptions;
-
-    private int page=0;
+    private int page = 0;
     private Toolbar toolbar;
 
     @Override
@@ -95,82 +111,94 @@ public class ChatDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_details);
 
-        toolbar=findViewById(R.id.toolbar);
+        Log.d("PARTNER_ID", "onCreate: " + Constant.PartnerId);
+        progressBar = findViewById(R.id.progressBar);
+        itemViewModel = ViewModelProviders.of(this).get(ItemViewModel.class);
+
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-         no_exist = findViewById(R.id.no_exist);
+        no_exist = findViewById(R.id.no_exist);
 
         no_exist.setVisibility(View.GONE);
 
         try {
-        mSharedPreferences = getSharedPreferences("tokenDetail", MODE_PRIVATE);
-        mSubscriptions = new CompositeSubscription();
-        Language = mSharedPreferences.getString(Constant.language, Locale.getDefault().getLanguage());
-        token = DataManager.getInstance().getCashedAccessToken().getAccess_token();
-        ID = mSharedPreferences.getString(Constant.ID, "");
-        name = mSharedPreferences.getString(Constant.Username, "");
-        hud = KProgressHUD.create(ChatDetails.this)
-                .setStyle(KProgressHUD.Style.PIE_DETERMINATE)
-                .setAnimationSpeed(2)
-                .setDimAmount(0.5f)
-                .setMaxProgress(100);
+            mSharedPreferences = getSharedPreferences("tokenDetail", MODE_PRIVATE);
+            mSubscriptions = new CompositeSubscription();
+            Language = mSharedPreferences.getString(Constant.language, Locale.getDefault().getLanguage());
+            token = DataManager.getInstance().getCashedAccessToken().getAccess_token();
+            ID = mSharedPreferences.getString(Constant.ID, "");
+            name = mSharedPreferences.getString(Constant.Username, "");
+            hud = KProgressHUD.create(ChatDetails.this)
+                    .setStyle(KProgressHUD.Style.PIE_DETERMINATE)
+                    .setAnimationSpeed(2)
+                    .setDimAmount(0.5f)
+                    .setMaxProgress(100);
 
-         getSupportActionBar().setTitle(ReciverName);
+            getSupportActionBar().setTitle(ReciverName);
 
-        Intent intent = new Intent();
-        intent.setClass(mContext, SignalRService.class);
-        bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+            Intent intent = new Intent();
+            intent.setClass(mContext, SignalRService.class);
+            bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
 
 
             messagesView = findViewById(R.id.messages_view);
             //Id= Objects.requireNonNull(getIntent().getExtras()).getString("Id");
             messageListView = new ArrayList<>();
-           // messageListView.add( new Message("hello", "", "", true));
-           // messageListView.add( new Message("hello", "ahmed", "https://img1.cgtrader.com/items/642249/05fb311cc8/large/cartoon-office-man-3d-model-animated-rigged-max-obj-fbx-ma-mb-mtl-tga.jpg", false));
+            // messageListView.add( new Message("hello", "", "", true));
+            // messageListView.add( new Message("hello", "ahmed", "https://img1.cgtrader.com/items/642249/05fb311cc8/large/cartoon-office-man-3d-model-animated-rigged-max-obj-fbx-ma-mb-mtl-tga.jpg", false));
             initSharedPreferences();
             editText = findViewById(R.id.editText);
             //initMessages();
 
-        hud.show();
-        getChat();
+            hud.show();
+            getChat();
         } catch (Exception e) {
-        Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
     }
-    }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId()==android.R.id.home)
-        {
-            Intent intent = new Intent(getApplicationContext(),AllChats.class);
+        if (item.getItemId() == android.R.id.home) {
+            Intent intent = new Intent(getApplicationContext(), AllChats.class);
             startActivity(intent);
             finish();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
-    private void getChat()
-    {
-        Constant.PartnerId=Constant.PartnerId==null?"":Constant.PartnerId;
-        if (Validation.isConnected(ChatDetails.this) && !Constant.PartnerId.contentEquals("")) {
-            mSubscriptions.add(NetworkUtil.getRetrofitByToken(token)
-                    .seeAllMessages(Constant.PartnerId)
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribeOn(Schedulers.io())
-                    .subscribe(chatResponseModel -> handleResponseSeeAllMessage(), this::handleError));
 
-            mSubscriptions.add(NetworkUtil.getRetrofitByToken(token)
-                    .getChatMessages(page,Constant.PartnerId)
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribeOn(Schedulers.io())
-                    .subscribe(this::handleResponse, this::handleError));
+    private void getChat() {
 
-        } else {
-            buildDialog(ChatDetails.this).show().setCanceledOnTouchOutside(false);
-        }
+        itemViewModel.itemPagedList.observe(this, new Observer<PagedList<ChatDetailsModel>>() {
+            @Override
+            public void onChanged(@Nullable PagedList<ChatDetailsModel> chatDetailsModels) {
+
+                adapter2.submitList(chatDetailsModels);
+
+            }
+        });
+
+//        Constant.PartnerId=Constant.PartnerId==null?"":Constant.PartnerId;
+//        if (Validation.isConnected(ChatDetails.this) && !Constant.PartnerId.contentEquals("")) {
+//            mSubscriptions.add(NetworkUtil.getRetrofitByToken(token)
+//                    .seeAllMessages(Constant.PartnerId)
+//                    .observeOn(AndroidSchedulers.mainThread())
+//                    .subscribeOn(Schedulers.io())
+//                    .subscribe(chatResponseModel -> handleResponseSeeAllMessage(), this::handleError));
+//
+//            mSubscriptions.add(NetworkUtil.getRetrofitByToken(token)
+//                    .getChatMessages(page,Constant.PartnerId)
+//                    .observeOn(AndroidSchedulers.mainThread())
+//                    .subscribeOn(Schedulers.io())
+//                    .subscribe(this::handleResponse, this::handleError));
+//
+//        } else {
+//            buildDialog(ChatDetails.this).show().setCanceledOnTouchOutside(false);
+//        }
     }
 
     private void handleResponseSeeAllMessage() {
@@ -178,7 +206,7 @@ public class ChatDetails extends AppCompatActivity {
 
     private void handleError(Throwable throwable) {
         //Toast.makeText(getActivity(), throwable.getMessage(), Toast.LENGTH_SHORT).show();
-        String message="";
+        String message = "";
 
 
         try {
@@ -286,21 +314,20 @@ public class ChatDetails extends AppCompatActivity {
                     default:
                         message = getString(R.string.default_message);
                 }
-            }
-            else
-            {
+            } else {
                 //Toast.makeText(AcceptOrRejectTrip.this, throwable.getMessage(), Toast.LENGTH_SHORT).show();
-                message = getString(R.string.default_message);            }
+                message = getString(R.string.default_message);
+            }
 
         } catch (Exception ex) {
             //view.onError(e.getMessage());
-            message = getString(R.string.default_message);        }
+            message = getString(R.string.default_message);
+        }
 
 
-        String error="failed to connect".toLowerCase();
-        if (message.toLowerCase().contains(error))
-        {
-            message=getString(R.string.check_internet);
+        String error = "failed to connect".toLowerCase();
+        if (message.toLowerCase().contains(error)) {
+            message = getString(R.string.check_internet);
         }
 
 
@@ -328,50 +355,31 @@ public class ChatDetails extends AppCompatActivity {
         hud.dismiss();
     }
 
-    private void handleResponse(ChatDetailsResponse chatDetailsResponse)
-    {
+    // TODO
+    private void handleResponse(ChatDetailsResponse chatDetailsResponse) {
         //messageListView.clear();
         //Toast.makeText(this, "ddd", Toast.LENGTH_SHORT).show();
-        if (chatDetailsResponse.getModel() != null)
-        {
-            for (int i = 0; i < chatDetailsResponse.getModel().size(); i++)
-            {
-                if (chatDetailsResponse.getModel().get(i).getSenderId().contentEquals(ID))
-                {
-                    messageListView.add( new Message(chatDetailsResponse.getModel().get(i).getMessage(),name , "", true,chatDetailsResponse.getModel().get(i).getCreationDate()));
-                }
-                else
-                {
-                    messageListView.add( new Message(chatDetailsResponse.getModel().get(i).getMessage(), ReciverName
-                            , ReciverPhoto, false,chatDetailsResponse.getModel().get(i).getCreationDate()));
+        if (chatDetailsResponse.getModel() != null) {
+            for (int i = 0; i < chatDetailsResponse.getModel().size(); i++) {
+                if (chatDetailsResponse.getModel().get(i).getSenderId().contentEquals(ID)) {
+                    messageListView.add(new Message(chatDetailsResponse.getModel().get(i).getMessage(), name, "", true, chatDetailsResponse.getModel().get(i).getCreationDate()));
+                } else {
+                    messageListView.add(new Message(chatDetailsResponse.getModel().get(i).getMessage(), ReciverName
+                            , ReciverPhoto, false, chatDetailsResponse.getModel().get(i).getCreationDate()));
                 }
             }
             if (messageListView.size() == 0) {
                 no_exist.setVisibility(View.VISIBLE);
                 hud.dismiss();
-            }
-            else if (chatDetailsResponse.getModel().size()==30)
-            {
+            } else if (chatDetailsResponse.getModel().size() == 30) {
                 page++;
                 getChat();
-            }
-            else
-            {
+            } else {
                 initMessages();
                 hud.dismiss();
             }
         }
 
-    }
-
-    private void initMessages(){
-        adapter2=new RecyclerViewAdapterChatRoom(ChatDetails.this,messageListView);
-        messagesView.setHasFixedSize(true);
-        LinearLayoutManager mRecyclerViewLayoutManager2 = new LinearLayoutManager(ChatDetails.this, LinearLayoutManager.VERTICAL, false);
-        messagesView.setLayoutManager(mRecyclerViewLayoutManager2);
-        messagesView.setAdapter(adapter2);
-        messagesView.scrollToPosition(Objects.requireNonNull(messagesView.getAdapter()).getItemCount() - 1);
-        adapter2.notifyDataSetChanged();
     }
   /*  public void initMessagesFromService(){
         adapter2=new MessageAdapter(ChatDetails.this,messageListView);
@@ -381,8 +389,18 @@ public class ChatDetails extends AppCompatActivity {
     }
 */
 
+    private void initMessages() {
+        adapter2 = new RecyclerViewAdapterChatRoom(this);
+        messagesView.setHasFixedSize(true);
+        LinearLayoutManager mRecyclerViewLayoutManager2 = new LinearLayoutManager(ChatDetails.this, LinearLayoutManager.VERTICAL, false);
+        messagesView.setLayoutManager(mRecyclerViewLayoutManager2);
+        messagesView.setAdapter(adapter2);
+        messagesView.scrollToPosition(Objects.requireNonNull(messagesView.getAdapter()).getItemCount() - 1);
+        adapter2.notifyDataSetChanged();
+    }
+
     private void initSharedPreferences() {
-        mSharedPreferences=getSharedPreferences("tokenDetail",MODE_PRIVATE);
+        mSharedPreferences = getSharedPreferences("tokenDetail", MODE_PRIVATE);
         token = DataManager.getInstance().getCashedAccessToken().getAccess_token();
     }
 
@@ -394,30 +412,29 @@ public class ChatDetails extends AppCompatActivity {
             // occur in a separate thread to avoid slowing down the activity performance.
             if (editText != null && Objects.requireNonNull(editText.getText()).length() > 0 && !ID.contentEquals("")) {
                 String message_body = editText.getText().toString();
-                SendMessageModel sendMessageModel=new SendMessageModel(
+                SendMessageModel sendMessageModel = new SendMessageModel(
                         editText.getText().toString()
-                        ,PartnerIdentityId
-                        ,ID
-                        ,ReciverId);
+                        , PartnerIdentityId
+                        , ID
+                        , ReciverId);
                 mService.sendMessage(sendMessageModel);
-                SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
                 try {
                     message = new Message(editText.getText().toString(), "", "", true, format.format(Calendar.getInstance().getTime()));
-                }catch (Exception e)
-                {
+                } catch (Exception e) {
                     message = new Message(editText.getText().toString(), "", "", true, "");
 
                 }
 
-                if(adapter2==null)
-                {
-                    if(messageListView==null)
-                        messageListView=new ArrayList<>();
+                if (adapter2 == null) {
+                    if (messageListView == null)
+                        messageListView = new ArrayList<>();
                     messageListView.add(message);
                     initMessages();
                 }
 
-                adapter2.add(message);
+              //  adapter2.add(message);
+                itemViewModel.invalidateDataSource();
                 messagesView.scrollToPosition(Objects.requireNonNull(messagesView.getAdapter()).getItemCount() - 1);
                 no_exist.setVisibility(View.GONE);
             }
@@ -439,8 +456,8 @@ public class ChatDetails extends AppCompatActivity {
 
     }
 
-    public void onBackPressed(){
-        Intent intent = new Intent(getApplicationContext(),AllChats.class);
+    public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(), AllChats.class);
         startActivity(intent);
 //        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 //        overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
@@ -456,26 +473,4 @@ public class ChatDetails extends AppCompatActivity {
         }
         super.onStop();
     }
-
-    /**
-     * Defines callbacks for service binding, passed to bindService()
-     */
-    private final ServiceConnection mConnection = new ServiceConnection() {
-
-        @Override
-        public void onServiceConnected(ComponentName className,
-                                       IBinder service) {
-            // We've bound to SignalRService, cast the IBinder and get SignalRService instance
-            SignalRService.LocalBinder binder = (SignalRService.LocalBinder) service;
-            mService = binder.getService();
-           // Toast.makeText(mContext, "onServiceConnected", Toast.LENGTH_SHORT).show();
-            mBound = true;
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName arg0) {
-           // Toast.makeText(mContext, "Disconnected", Toast.LENGTH_SHORT).show();
-            mBound = false;
-        }
-    };
 }

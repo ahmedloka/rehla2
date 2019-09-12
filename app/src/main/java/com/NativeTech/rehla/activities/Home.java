@@ -18,10 +18,12 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.NativeTech.rehla.model.DataManager;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -109,6 +111,8 @@ public class Home extends AppCompatActivity {
         mSharedPreferences      = getSharedPreferences("tokenDetail",MODE_PRIVATE);
         Language                = mSharedPreferences.getString(Constant.language, Locale.getDefault().getLanguage());
 
+        Log.d("TOKEN_", "onCreate: " + DataManager.getInstance().getCashedAccessToken().getAccess_token());
+
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
 //            requestWindowFeature(Window.getDefaultFeatures(Home.this));
 //        }
@@ -138,6 +142,8 @@ public class Home extends AppCompatActivity {
 
 
         token                   = DataManager.getInstance().getCashedAccessToken().getAccess_token();
+        Log.d("TOKEN_", "onCreate: "+token);
+        Toast.makeText(this, token, Toast.LENGTH_SHORT).show();
         img                     = mSharedPreferences.getString(Constant.imageUri, "");
         nameValue               = mSharedPreferences.getString(Constant.Username, "");
 

@@ -47,6 +47,7 @@ import com.NativeTech.rehla.model.data.dto.Models.addReservation.addReservationR
 import com.NativeTech.rehla.model.data.dto.Models.checkDriverStartedTripResponse;
 import com.NativeTech.rehla.model.data.dto.Models.getCityModels.SearchResponseModel;
 
+import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -185,9 +186,6 @@ public interface RetrofitInterface {
     @GET("getAllUserMessagesWithOthers")
     Observable<ChatUserResponse> getAllUserMessagesWithOthers(@Query("Page") String Page);
 
-    @GET("getChatMessages")
-    Observable<ChatDetailsResponse> getChatMessages(@Query("Page") int Page, @Query("partnerId") String partnerId);
-
     @GET("RequestEmailVerification")
     Observable<ErrorsModel> RequestEmailVerification();
 
@@ -226,5 +224,11 @@ public interface RetrofitInterface {
 
    @GET("seeAllMessages")
     Observable<ChatResponseModel> seeAllMessages(@Query("partnerId") String partnerId);
+
+//    @GET("getChatMessages")
+//    Observable<ChatDetailsResponse> getChatMessages(@Query("Page") int Page, @Query("partnerId") String partnerId);
+
+    @GET("getChatMessages")
+    Call<ChatDetailsResponse> getChatMessages(@Query("Page") int Page, @Query("partnerId") String partnerId);
 
 }

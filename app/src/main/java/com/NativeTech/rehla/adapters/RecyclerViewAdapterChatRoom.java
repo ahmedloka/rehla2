@@ -1,8 +1,11 @@
 package com.NativeTech.rehla.adapters;
 
 import android.annotation.SuppressLint;
+import android.arch.paging.PagedListAdapter;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
+import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,17 +13,123 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.NativeTech.rehla.Utills.TerhalUtils;
-import com.squareup.picasso.Picasso;
-
-import java.util.List;
-
 import com.NativeTech.rehla.R;
+import com.NativeTech.rehla.Utills.Constant;
+import com.NativeTech.rehla.Utills.TerhalUtils;
+import com.NativeTech.rehla.model.data.dto.Models.Chats.ChatDetailsModel;
+import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
-public class RecyclerViewAdapterChatRoom extends RecyclerView.Adapter<RecyclerViewAdapterChatRoom.ViewHolder> {
+public class RecyclerViewAdapterChatRoom extends PagedListAdapter<ChatDetailsModel, RecyclerViewAdapterChatRoom.ViewHolder> {
+
+    private static DiffUtil.ItemCallback<ChatDetailsModel> DIFF_CALLBACK =
+            new DiffUtil.ItemCallback<ChatDetailsModel>() {
+                @Override
+                public boolean areItemsTheSame(ChatDetailsModel oldItem, ChatDetailsModel newItem) {
+                    return oldItem.getSenderId().equals(newItem.getSenderId());
+                }
+
+                @SuppressLint("DiffUtilEquals")
+                @Override
+                public boolean areContentsTheSame(ChatDetailsModel oldItem, ChatDetailsModel newItem) {
+                    return oldItem.equals(newItem);
+                }
+            };
+    private Context mCtx;
+    // private PagedList<ChatList> pagedList ;
+    private SharedPreferences sharedPreferences;
+//
+
+    public RecyclerViewAdapterChatRoom(Context mCtx) { //PagedList<ChatList> pagedList
+        super(DIFF_CALLBACK);
+        this.mCtx = mCtx;
+        //  this.pagedList = pagedList ;
+        sharedPreferences = mCtx.getSharedPreferences("MySharedPreference", Context.MODE_PRIVATE);
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(mCtx).inflate(R.layout.my_message, parent, false);
+        return new ViewHolder(view);
+    }
+
+    @SuppressLint("MissingPermission")
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+        ChatDetailsModel message = getItem(position);
+
+        if (message.getSenderId().equals(Constant.PartnerId)) {
+            holder.my.setVisibility(View.VISIBLE);
+            holder.their.setVisibility(View.GONE);
+
+            holder.messageBodyMy.setText(message.getMessage());
+            try {
+                holder.messagemyDate.setText(TerhalUtils.getFormatedDate(message.getCreationDate()));
+            } catch (Exception e) {
+                holder.messagemyDate.setVisibility(View.GONE);
+            }
+        } else {
+            holder.my.setVisibility(View.GONE);
+            holder.their.setVisibility(View.VISIBLE);
+            try {
+                holder.messageOtherDate.setText(TerhalUtils.getFormatedDate(message.getCreationDate()));
+            } catch (Exception e) {
+                holder.messagemyDate.setVisibility(View.GONE);
+            }
+            holder.name.setText(message.getPartnerName());
+            holder.messageBodyTheir.setText(message.getMessage());
+            if (message.getPartnerPhoto().equals("")) {
+                holder.avatar.setImageResource(R.drawable.ic_user);
+            } else {
+                Picasso.with(mCtx)
+                        .load(message.getPartnerPhoto())
+                        .placeholder(R.drawable.ic_user)
+                        .into(holder.avatar);
+            }
+
+        }
+    }
+
+
+    class ViewHolder extends RecyclerView.ViewHolder {
+
+
+        final RelativeLayout my;
+        final RelativeLayout their;
+
+        final CircleImageView avatar;
+        final TextView name;
+        final TextView messageBodyMy;
+        final TextView messageBodyTheir;
+        final TextView messagemyDate;
+        final TextView messageOtherDate;
+
+
+        ViewHolder(View itemView) {
+            super(itemView);
+
+            name = itemView.findViewById(R.id.name);
+            avatar = itemView.findViewById(R.id.avatar);
+            messagemyDate = itemView.findViewById(R.id.message_body_mydate);
+            messageOtherDate = itemView.findViewById(R.id.message_body_theirdate);
+            messageBodyMy = itemView.findViewById(R.id.message_body_my);
+            messageBodyTheir = itemView.findViewById(R.id.message_body_their);
+
+            my = itemView.findViewById(R.id.my);
+            their = itemView.findViewById(R.id.their);
+            //messageBody = view.findViewById(R.id.message_body);
+        }
+    }
+
+
+}
+
+
+/*
+extends RecyclerView.Adapter<RecyclerViewAdapterChatRoom.ViewHolder> {
 
     private final List<Message> messages;
     private final Context context;
@@ -88,43 +197,15 @@ public class RecyclerViewAdapterChatRoom extends RecyclerView.Adapter<RecyclerVi
     }
 
 
-    class ViewHolder extends RecyclerView.ViewHolder{
-
-
-
-
-
-        final RelativeLayout my;
-        final RelativeLayout their;
-
-        final CircleImageView avatar;
-        final TextView name;
-        final TextView messageBodyMy;
-        final TextView messageBodyTheir;
-        final TextView messagemyDate;
-        final TextView messageOtherDate;
-
-
-        ViewHolder(View itemView) {
-            super(itemView);
-
-            name = view.findViewById(R.id.name);
-            avatar = view.findViewById(R.id.avatar);
-            messagemyDate = view.findViewById(R.id.message_body_mydate);
-            messageOtherDate = view.findViewById(R.id.message_body_theirdate);
-            messageBodyMy = view.findViewById(R.id.message_body_my);
-            messageBodyTheir = view.findViewById(R.id.message_body_their);
-
-            my      = view.findViewById(R.id.my);
-            their   = view.findViewById(R.id.their);
-            //messageBody = view.findViewById(R.id.message_body);
-        }
-    }
 
 
 }
 
 
 
+
+
+
+ */
 
 
