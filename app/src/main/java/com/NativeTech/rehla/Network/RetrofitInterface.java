@@ -1,6 +1,7 @@
 package com.NativeTech.rehla.Network;
 
 
+import com.NativeTech.rehla.model.chat.ChateResponse;
 import com.NativeTech.rehla.model.data.dto.Models.AcceptOrReject.AcceptOrRejectResponse;
 import com.NativeTech.rehla.model.data.dto.Models.AddCar.AddCarRequestModel;
 import com.NativeTech.rehla.model.data.dto.Models.AddCar.AddCarResponseModelFinal;
@@ -229,6 +230,6 @@ public interface RetrofitInterface {
 //    Observable<ChatDetailsResponse> getChatMessages(@Query("Page") int Page, @Query("partnerId") String partnerId);
 
     @GET("getChatMessages")
-    Call<ChatDetailsResponse> getChatMessages(@Query("Page") int Page, @Query("partnerId") String partnerId);
+    Call<ChateResponse> getChatMessages(@Query("Page") int Page, @Query("partnerId") String partnerId);
 
 }

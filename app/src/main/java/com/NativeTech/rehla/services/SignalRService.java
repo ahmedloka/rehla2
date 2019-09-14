@@ -20,8 +20,13 @@ import com.NativeTech.rehla.Utills.Constant;
 import com.NativeTech.rehla.Utills.TerhalUtils;
 import com.NativeTech.rehla.activities.ChatDetails;
 import com.NativeTech.rehla.adapters.Message;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import microsoft.aspnet.signalr.client.Credentials;
+import microsoft.aspnet.signalr.client.MessageReceivedHandler;
 import microsoft.aspnet.signalr.client.Platform;
 import microsoft.aspnet.signalr.client.SignalRFuture;
 import microsoft.aspnet.signalr.client.http.android.AndroidPlatformComponent;
@@ -32,17 +37,21 @@ import microsoft.aspnet.signalr.client.transport.ServerSentEventsTransport;
 
 import static com.NativeTech.rehla.Utills.Constant.ReciverName;
 import static com.NativeTech.rehla.Utills.Constant.ReciverPhoto;
+import static com.NativeTech.rehla.activities.ChatDetails.itemViewModel;
+import static com.NativeTech.rehla.activities.ChatDetails.messagesView;
 
 
 public class SignalRService extends Service {
     private HubConnection mHubConnection;
     private HubProxy mHubProxy;
     private Handler mHandler; // to display Toast message
-    private final IBinder mBinder = new LocalBinder(); // Binder given to clients
 
 
     private SharedPreferences mSharedPreferences;
     private String token;
+
+    private final IBinder mBinder = new LocalBinder(); // Binder given to clients
+    private SharedPreferences sharedPreferences;
 
     public SignalRService() {
     }
@@ -50,7 +59,7 @@ public class SignalRService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        mSharedPreferences=getSharedPreferences("tokenDetail",MODE_PRIVATE);
+        mSharedPreferences = getSharedPreferences("tokenDetail", MODE_PRIVATE);
         token = DataManager.getInstance().getCashedAccessToken().getAccess_token();
         mHandler = new Handler(Looper.getMainLooper());
 
@@ -68,11 +77,10 @@ public class SignalRService extends Service {
     public void onDestroy() {
 
 
-        mHubProxy.invoke("Disconnect");
+        // mHubProxy.invoke("Disconnect");
         mHubConnection.stop();
         super.onDestroy();
     }
-
 
 
     @Override
@@ -101,8 +109,8 @@ public class SignalRService extends Service {
         mHubProxy.invoke(SERVER_METHOD_SEND,
                 message.getMessage(),
                 message.getReciverIdentifier()
-                ,message.getMyId()
-                ,message.getReciverId()).done(
+                , message.getMyId()
+                , message.getReciverId()).done(
                 aVoid -> {
                     //   Toast.makeText(getApplicationContext(), "Join", Toast.LENGTH_SHORT).show();
                     Log.d("<Debug", "Join"); // won't work!
@@ -132,8 +140,7 @@ public class SignalRService extends Service {
             SignalRFuture<Void> signalRFuture = mHubConnection.start(clientTransport);
             try {
                 signalRFuture.get();
-            }
-            catch (InterruptedException | ExecutionException e) {
+            } catch (InterruptedException | ExecutionException e) {
                 //e.printStackTrace();
                 Toast.makeText(this, App.mContext.getResources().getString(R.string.default_message), Toast.LENGTH_SHORT).show();
                 return;
@@ -157,25 +164,95 @@ public class SignalRService extends Service {
                 //sendMessage(HELLO_MSG);
 
                 String CLIENT_METHOD_BROADAST_MESSAGE = "broadcastMessage";
-                mHubProxy.on(CLIENT_METHOD_BROADAST_MESSAGE, (message, senderId, reciverId ,DateTime) -> {
-                    final String finalMsg = message ;
-                    final String DateTimen = DateTime ;
+                mHubProxy.on(CLIENT_METHOD_BROADAST_MESSAGE, (message, senderId, reciverId, DateTime) -> {
+                    final String finalMsg = message;
+                    final String DateTimen = DateTime;
                     // display Toast message
                     mHandler.post(() -> {
 
-                        ChatDetails.messageListView.add( new Message(finalMsg, ReciverName, ReciverPhoto, false,DateTimen));
+
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                itemViewModel.invalidateDataSource();
+                                itemViewModel.invalidateDataSource();
+                            }
+                        }, 500);
+
+                        messagesView.smoothScrollToPosition(1);
+
+
+                        // ChatDetails.messageListView.add(new Message(finalMsg, ReciverName, ReciverPhoto, false, DateTimen));
                         //initMessages
-                        TerhalUtils.initMessages(getApplicationContext());
+                        //  TerhalUtils.initMessages(getApplicationContext());
                         //Toast.makeText(getApplicationContext(), finalMsg, Toast.LENGTH_LONG).show();
                     });
-                },  String.class,String.class,String.class,String.class);
+                }, String.class, String.class, String.class, String.class);
             }, 1000);
 
+        } catch (Exception e) {
+            // e.printStackTrace();
         }
-        catch (Exception e)
-        {
-           // e.printStackTrace();
-        }
+
+        /* ****seems useless but should be here!**** */
+        mHubProxy.subscribe(new Object() {
+            @SuppressWarnings("unused")
+            public void newMessage(final String message, final String senderIdentityId) {
+
+                //  Toast.makeText(getApplicationContext(), message.toString() + " " + senderIdentityId, Toast.LENGTH_SHORT).show();
+                Log.d("<Debug>", "newMessage: " + message.toString() + " " + senderIdentityId);
+            }
+        });
+
+
+        mHubConnection.received(new MessageReceivedHandler() {
+
+            @Override
+            public void onMessageReceived(final JsonElement json) {
+                Log.e("onMessageReceived ", json.toString());
+                mHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        //     Toast.makeText(getApplicationContext(), json.toString(), Toast.LENGTH_SHORT).show();
+                        Log.d("<De", "run: " + json.toString());
+                        JsonParser parser = new JsonParser();
+                        JsonObject jsonObject = parser.parse(json.toString()).getAsJsonObject();
+
+
+                        try {
+                            JsonArray jsonArray = jsonObject.getAsJsonArray("A");
+                            String msg = jsonArray.get(0).toString().replace("\"", "").trim();
+
+                            // Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+                            Log.d("<De", "run: " + msg);
+
+
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    itemViewModel.invalidateDataSource();
+                                    itemViewModel.invalidateDataSource();
+                                }
+                            }, 500);
+
+                            messagesView.smoothScrollToPosition(1);
+
+                            //messagesOneToOneAdapter.addItem(new Message(Message.MSG_TYPE_RECEIVED, msg));
+                            // messagesOneToOneAdapter.notifyDataSetChanged();
+
+//                            mRecyclerViewOneToOne.setAdapter(messagesOneToOneAdapter);
+//                            mRecyclerViewOneToOne.smoothScrollToPosition(messagesOneToOneAdapter.getItemCount() - 1);
+                        } catch (NullPointerException ignored) {
+
+                        }
+
+
+                    }
+                });
+
+            }
+        });
+
 
     }
 }

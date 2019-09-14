@@ -16,24 +16,25 @@ import android.widget.TextView;
 import com.NativeTech.rehla.R;
 import com.NativeTech.rehla.Utills.Constant;
 import com.NativeTech.rehla.Utills.TerhalUtils;
+import com.NativeTech.rehla.model.chat.Model;
 import com.NativeTech.rehla.model.data.dto.Models.Chats.ChatDetailsModel;
 import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
-public class RecyclerViewAdapterChatRoom extends PagedListAdapter<ChatDetailsModel, RecyclerViewAdapterChatRoom.ViewHolder> {
+public class RecyclerViewAdapterChatRoom extends PagedListAdapter<Model, RecyclerViewAdapterChatRoom.ViewHolder> {
 
-    private static DiffUtil.ItemCallback<ChatDetailsModel> DIFF_CALLBACK =
-            new DiffUtil.ItemCallback<ChatDetailsModel>() {
+    private static DiffUtil.ItemCallback<Model> DIFF_CALLBACK =
+            new DiffUtil.ItemCallback<Model>() {
                 @Override
-                public boolean areItemsTheSame(ChatDetailsModel oldItem, ChatDetailsModel newItem) {
+                public boolean areItemsTheSame(Model oldItem, Model newItem) {
                     return oldItem.getSenderId().equals(newItem.getSenderId());
                 }
 
                 @SuppressLint("DiffUtilEquals")
                 @Override
-                public boolean areContentsTheSame(ChatDetailsModel oldItem, ChatDetailsModel newItem) {
+                public boolean areContentsTheSame(Model oldItem, Model newItem) {
                     return oldItem.equals(newItem);
                 }
             };
@@ -59,37 +60,43 @@ public class RecyclerViewAdapterChatRoom extends PagedListAdapter<ChatDetailsMod
     @SuppressLint("MissingPermission")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-        ChatDetailsModel message = getItem(position);
+        Model message = getItem(position);
 
-        if (message.getSenderId().equals(Constant.PartnerId)) {
-            holder.my.setVisibility(View.VISIBLE);
-            holder.their.setVisibility(View.GONE);
+        if (message != null) {
 
-            holder.messageBodyMy.setText(message.getMessage());
-            try {
-                holder.messagemyDate.setText(TerhalUtils.getFormatedDate(message.getCreationDate()));
-            } catch (Exception e) {
-                holder.messagemyDate.setVisibility(View.GONE);
-            }
-        } else {
-            holder.my.setVisibility(View.GONE);
-            holder.their.setVisibility(View.VISIBLE);
-            try {
-                holder.messageOtherDate.setText(TerhalUtils.getFormatedDate(message.getCreationDate()));
-            } catch (Exception e) {
-                holder.messagemyDate.setVisibility(View.GONE);
-            }
-            holder.name.setText(message.getPartnerName());
-            holder.messageBodyTheir.setText(message.getMessage());
-            if (message.getPartnerPhoto().equals("")) {
-                holder.avatar.setImageResource(R.drawable.ic_user);
+            if (message.getSenderId().equals(Constant.PartnerId)) {
+                holder.my.setVisibility(View.VISIBLE);
+                holder.their.setVisibility(View.GONE);
+
+                holder.messageBodyMy.setText(message.getMessage());
+                try {
+                    holder.messagemyDate.setText(TerhalUtils.getFormatedDate(message.getCreationDate()));
+                } catch (Exception e) {
+                    holder.messagemyDate.setVisibility(View.GONE);
+                }
             } else {
-                Picasso.with(mCtx)
-                        .load(message.getPartnerPhoto())
-                        .placeholder(R.drawable.ic_user)
-                        .into(holder.avatar);
-            }
+                holder.my.setVisibility(View.GONE);
+                holder.their.setVisibility(View.VISIBLE);
+                try {
+                    holder.messageOtherDate.setText(TerhalUtils.getFormatedDate(message.getCreationDate()));
+                } catch (Exception e) {
+                    holder.messagemyDate.setVisibility(View.GONE);
+                }
+                //  holder.name.setText(message.getPartnerName());
+                holder.messageBodyTheir.setText(message.getMessage());
+                holder.avatar.setImageResource(R.drawable.ic_user);
 
+                //if (message.getPartnerPhoto().equals("")) {
+                //   }
+// else {
+//                    Picasso.with(mCtx)
+//                            .load(message.getPartnerPhoto())
+//                            .placeholder(R.drawable.ic_user)
+//                            .into(holder.avatar);
+//                }
+
+
+            }
         }
     }
 

@@ -63,7 +63,7 @@ public class RecyclerViewAdapterChats extends RecyclerView.Adapter<RecyclerViewA
 
 
         holder.itemView.setOnClickListener(v -> {
-            hud.show();
+          //  hud.show();
             Intent intent = new Intent(mContext, ChatDetails.class);
             if (ID.contentEquals(rowItem.get(position).getSenderId())) {
                 Constant.PartnerId = rowItem.get(position).getReciverId();

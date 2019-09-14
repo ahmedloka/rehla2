@@ -12,10 +12,12 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatEditText;
+import android.support.v7.widget.AppCompatImageButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -30,14 +32,15 @@ import android.widget.Toast;
 
 import com.NativeTech.rehla.R;
 import com.NativeTech.rehla.Utills.Constant;
-import com.NativeTech.rehla.activities.paging.ItemViewModel;
 import com.NativeTech.rehla.adapters.Message;
 import com.NativeTech.rehla.adapters.Messages;
 import com.NativeTech.rehla.adapters.RecyclerViewAdapterChatRoom;
 import com.NativeTech.rehla.model.DataManager;
+import com.NativeTech.rehla.model.chat.Model;
 import com.NativeTech.rehla.model.data.dto.Models.Chats.ChatDetailsModel;
 import com.NativeTech.rehla.model.data.dto.Models.Chats.ChatDetailsResponse;
 import com.NativeTech.rehla.model.data.dto.Models.Chats.SendMessageModel;
+import com.NativeTech.rehla.pagination.ItemViewModel;
 import com.NativeTech.rehla.services.SignalRService;
 import com.kaopiz.kprogresshud.KProgressHUD;
 
@@ -60,6 +63,7 @@ import static com.NativeTech.rehla.Utills.Constant.ReciverPhoto;
 
 public class ChatDetails extends AppCompatActivity {
 
+    private AppCompatImageButton mBtnSend;
     @SuppressLint("StaticFieldLeak")
     public static RecyclerView messagesView;
     @SuppressLint("StaticFieldLeak")
@@ -76,8 +80,10 @@ public class ChatDetails extends AppCompatActivity {
     private KProgressHUD hud;
     private String ID = "";
     private String name = "";
-    private ItemViewModel itemViewModel;
+    public static ItemViewModel itemViewModel;
     private TextView no_exist;
+    // private SignalRService mService;
+
     private SignalRService mService;
     private boolean mBound = false;
     /**
@@ -91,7 +97,7 @@ public class ChatDetails extends AppCompatActivity {
             // We've bound to SignalRService, cast the IBinder and get SignalRService instance
             SignalRService.LocalBinder binder = (SignalRService.LocalBinder) service;
             mService = binder.getService();
-            // Toast.makeText(mContext, "onServiceConnected", Toast.LENGTH_SHORT).show();
+            //  Toast.makeText(mContext, "onServiceConnected", Toast.LENGTH_SHORT).show();
             mBound = true;
         }
 
@@ -101,19 +107,65 @@ public class ChatDetails extends AppCompatActivity {
             mBound = false;
         }
     };
+
     private String Language;
     private CompositeSubscription mSubscriptions;
     private int page = 0;
     private Toolbar toolbar;
 
     @Override
+    protected void onStop() {
+        // Unbind from the service
+        if (mBound) {
+            unbindService(mConnection);
+            mBound = false;
+        }
+        super.onStop();
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mBound = false;
+        Intent intent = new Intent();
+        intent.setClass(mContext, SignalRService.class);
+        bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+
+
+        try {
+            itemViewModel.invalidateDataSource();
+
+        } catch (NullPointerException ignored) {
+
+        }
+
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_details);
 
+
+        // FOR SIGNALR
+        Intent intentSignalR = new Intent();
+        intentSignalR.setClass(mContext, SignalRService.class);
+        bindService(intentSignalR, mConnection, Context.BIND_AUTO_CREATE);
+
+        // ________________________
+
+        mBtnSend = findViewById(R.id.btn_send);
+
+        initMessages();
+
+        itemViewModel = ViewModelProviders.of(this).get(ItemViewModel.class);
+
+
         Log.d("PARTNER_ID", "onCreate: " + Constant.PartnerId);
         progressBar = findViewById(R.id.progressBar);
-        itemViewModel = ViewModelProviders.of(this).get(ItemViewModel.class);
+        // itemViewModel = ViewModelProviders.of(this).get(ItemViewModel.class);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -139,12 +191,11 @@ public class ChatDetails extends AppCompatActivity {
 
             getSupportActionBar().setTitle(ReciverName);
 
-            Intent intent = new Intent();
-            intent.setClass(mContext, SignalRService.class);
-            bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+//            Intent intent = new Intent();
+//            intent.setClass(mContext, SignalRService.class);
+//            bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
 
 
-            messagesView = findViewById(R.id.messages_view);
             //Id= Objects.requireNonNull(getIntent().getExtras()).getString("Id");
             messageListView = new ArrayList<>();
             // messageListView.add( new Message("hello", "", "", true));
@@ -153,8 +204,11 @@ public class ChatDetails extends AppCompatActivity {
             editText = findViewById(R.id.editText);
             //initMessages();
 
-            hud.show();
+            //hud.show();
             getChat();
+            mBtnSend.setOnClickListener(v -> {
+                sendMessage();
+            });
         } catch (Exception e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -173,11 +227,16 @@ public class ChatDetails extends AppCompatActivity {
 
     private void getChat() {
 
-        itemViewModel.itemPagedList.observe(this, new Observer<PagedList<ChatDetailsModel>>() {
+        itemViewModel.itemPagedList.observe(this, new Observer<PagedList<Model>>() {
             @Override
-            public void onChanged(@Nullable PagedList<ChatDetailsModel> chatDetailsModels) {
-
-                adapter2.submitList(chatDetailsModels);
+            public void onChanged(@Nullable PagedList<Model> models) {
+                adapter2.submitList(models);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        messagesView.smoothScrollToPosition(1);
+                    }
+                }, 500);
 
             }
         });
@@ -375,7 +434,6 @@ public class ChatDetails extends AppCompatActivity {
                 page++;
                 getChat();
             } else {
-                initMessages();
                 hud.dismiss();
             }
         }
@@ -390,12 +448,14 @@ public class ChatDetails extends AppCompatActivity {
 */
 
     private void initMessages() {
+        messagesView = findViewById(R.id.messages_view);
         adapter2 = new RecyclerViewAdapterChatRoom(this);
         messagesView.setHasFixedSize(true);
-        LinearLayoutManager mRecyclerViewLayoutManager2 = new LinearLayoutManager(ChatDetails.this, LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager mRecyclerViewLayoutManager2 = new LinearLayoutManager(ChatDetails.this, LinearLayoutManager.VERTICAL, true);
+        mRecyclerViewLayoutManager2.setStackFromEnd(true);
         messagesView.setLayoutManager(mRecyclerViewLayoutManager2);
         messagesView.setAdapter(adapter2);
-        messagesView.scrollToPosition(Objects.requireNonNull(messagesView.getAdapter()).getItemCount() - 1);
+        messagesView.scrollToPosition(1);
         adapter2.notifyDataSetChanged();
     }
 
@@ -404,57 +464,91 @@ public class ChatDetails extends AppCompatActivity {
         token = DataManager.getInstance().getCashedAccessToken().getAccess_token();
     }
 
-    public void sendMessage(View view) {
+    public void sendMessage() {
+
 
         if (mBound) {
             // Call a method from the SignalRService.
             // However, if this call were something that might hang, then this request should
             // occur in a separate thread to avoid slowing down the activity performance.
-            if (editText != null && Objects.requireNonNull(editText.getText()).length() > 0 && !ID.contentEquals("")) {
-                String message_body = editText.getText().toString();
+            if (!editText.getText().toString().isEmpty()) {
+                String message = editText.getText().toString();
+
+                //String reciveridentityId, String myID, String message
                 SendMessageModel sendMessageModel = new SendMessageModel(
-                        editText.getText().toString()
+                        message
                         , PartnerIdentityId
                         , ID
                         , ReciverId);
                 mService.sendMessage(sendMessageModel);
-                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-                try {
-                    message = new Message(editText.getText().toString(), "", "", true, format.format(Calendar.getInstance().getTime()));
-                } catch (Exception e) {
-                    message = new Message(editText.getText().toString(), "", "", true, "");
-
-                }
-
-                if (adapter2 == null) {
-                    if (messageListView == null)
-                        messageListView = new ArrayList<>();
-                    messageListView.add(message);
-                    initMessages();
-                }
-
-              //  adapter2.add(message);
-                itemViewModel.invalidateDataSource();
-                messagesView.scrollToPosition(Objects.requireNonNull(messagesView.getAdapter()).getItemCount() - 1);
-                no_exist.setVisibility(View.GONE);
-            }
-            if (editText != null) {
                 editText.getText().clear();
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        itemViewModel.invalidateDataSource();
+                        itemViewModel.invalidateDataSource();
+                    }
+                }, 500);
+
+
+                messagesView.smoothScrollToPosition(1);
+
             }
+//        if (mBound) {
+//            // Call a method from the SignalRService.
+//            // However, if this call were something that might hang, then this request should
+//            // occur in a separate thread to avoid slowing down the activity performance.
+//            if (editText != null && Objects.requireNonNull(editText.getText()).length() > 0 && !ID.contentEquals("")) {
+//
+//
+//
+//                String message_body = editText.getText().toString();
+//                SendMessageModel sendMessageModel = new SendMessageModel(
+//                        editText.getText().toString()
+//                        , PartnerIdentityId
+//                        , ID
+//                        , ReciverId);
+//                //     mService.sendMessage(sendMessageModel);
+//                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+//                try {
+//                    message = new Message(editText.getText().toString(), "", "", true, format.format(Calendar.getInstance().getTime()));
+//                } catch (Exception e) {
+//                    message = new Message(editText.getText().toString(), "", "", true, "");
+//
+//                }
+//
+//                if (adapter2 == null) {
+//                    if (messageListView == null)
+//                        messageListView = new ArrayList<>();
+//                    messageListView.add(message);
+//                    initMessages();
+//                }
+//
+//                //  adapter2.add(message);
+//                itemViewModel.invalidateDataSource();
+//                messagesView.scrollToPosition(Objects.requireNonNull(messagesView.getAdapter()).getItemCount() - 1);
+//                no_exist.setVisibility(View.GONE);
+//            }
+//            if (editText != null) {
+//                editText.getText().clear();
+//            }
+//
+//        }
 
         }
 
     }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mBound = false;
-        Intent intent = new Intent();
-        intent.setClass(mContext, SignalRService.class);
-        bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
-
-    }
+//
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        mBound = false;
+//        Intent intent = new Intent();
+//        intent.setClass(mContext, SignalRService.class);
+//        bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+//
+//    }
 
     public void onBackPressed() {
         Intent intent = new Intent(getApplicationContext(), AllChats.class);
@@ -463,14 +557,14 @@ public class ChatDetails extends AppCompatActivity {
 //        overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
         finish();
     }
-
-    @Override
-    protected void onStop() {
-        // Unbind from the service
-        if (mBound) {
-            unbindService(mConnection);
-            mBound = false;
-        }
-        super.onStop();
-    }
+//
+//    @Override
+//    protected void onStop() {
+//        // Unbind from the service
+//        if (mBound) {
+//            unbindService(mConnection);
+//            mBound = false;
+//        }
+//        super.onStop();
+//    }
 }
